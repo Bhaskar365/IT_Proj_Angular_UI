@@ -1,0 +1,77 @@
+
+mat-toolbar{
+    background-image:linear-gradient(#003082,#5788db);
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    
+    .user-info{
+        display: flex;
+        align-items: center;
+        span{
+            position: absolute;
+            right: 0.5rem;
+        }
+        mat-icon{
+            transform: scale(1.4);
+        }
+    }
+}
+#icon{
+    font-size: 2rem;
+}
+
+#settingIcon{
+    font-size: larger;
+    cursor: pointer;
+    
+}
+
+
+mat-sidenav-container{
+    position: relative;
+    width:100%;
+    height: 100%;
+
+    mat-sidenav{
+        background-image:linear-gradient(#003082,#5788db);
+        width:140px;
+
+        
+        mat-list{
+            margin-top: 1rem;
+            text-align: center;
+            color:white;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+// @media screen and (min-width:200px){
+    
+//     .example-container{
+//         border:2px solid red;
+//     }
+
+
+
+//     mat-toolbar{
+//        height:4px;
+//         color:white;
+//         font-size: small;
+//     }
+//     #icon{
+//         font-size: small;
+//         border:2px solid yellow;
+//     }
+//     mat-sidenav{
+//         background-image:linear-gradient(#003082,#5788db);
+        
+//         width: 70px !important;
+//         font-size: small;
+//     }
+    
+// }
+

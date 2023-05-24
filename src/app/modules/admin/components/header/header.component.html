@@ -1,0 +1,40 @@
+<meta name="viewport" content="width=device-width,initial-scale=1.0"> 
+<mat-toolbar>
+    <mat-toolbar-row>
+      <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button  color="primary"> -->
+        <i id="icon" class="fa fa-bars" (click)="drawer.toggle()"></i>
+      <!-- </button> -->
+      <span>&nbsp;Inventory Management System</span>
+      <div class="user-info">
+        <span>
+            Hi, User
+        <!-- <button mat-icon-button  id="settingIcon"> -->
+            <!-- <mat-icon [matMenuTriggerFor]="userName">account_circle</mat-icon> -->
+            <i class="fa fa-user-circle-o" aria-hidden="true" id="settingIcon" [matMenuTriggerFor]="userName"></i>
+        <!-- </button> -->
+      </span>
+    </div>
+
+    <mat-menu #userName="matMenu">
+        <button mat-menu-item routerLink="/users/profile">
+            <mat-icon>account_box</mat-icon>
+            <span>Profile</span>
+        </button>
+        <button mat-menu-item (click)="logOut()">
+            <mat-icon>logout</mat-icon>
+            <span>Log out</span>
+        </button>
+    </mat-menu>
+
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-container">
+    <mat-sidenav #drawer mode="side" opened role="navigation">
+       <mat-list routerLink="#">Home</mat-list>
+       <mat-list routerLink="#">Bar Graph</mat-list>
+       <mat-list routerLink="#">Pie Graph</mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
