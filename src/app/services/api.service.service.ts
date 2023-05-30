@@ -2,20 +2,39 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, catchError,map } from 'rxjs';
+
+interface Device_Data {
+  data : string;
+  msg : string;
+  total : string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiServiceService {
+export class ApiServiceService 
+{
+  constructor(private http:HttpClient,private router:Router) { }
 
+  //////////////////INVENTORY API////////////////////////////
+  getAllDataFunc()
+  {
+    return this.http.post<any>("https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll",
+    { token:"A12F7A58-842D-4111-A44D-5F8C4E1AA521" }).pipe(catchError((err:any)=>{
+      this.router.navigate(['/error']);
+      return err;
+    }),map(((res:Device_Data)=>{
+      return res.data;
+    })));
+  }
+
+  /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS STARTS---///////////////
   baseUrl = "https://localhost:7269/api/Users/";
 
   currentUser:BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
   jwtHelperService = new JwtHelperService();
-
-  constructor(private http:HttpClient,private router:Router) { }
 
   createAccount(user:Array<String|null|undefined>) {
 
@@ -41,7 +60,7 @@ export class ApiServiceService {
 
       return this.http.get(this.baseUrl + 'LoginUser', {
         params:params,
-        responseType: 'text'
+        responseType: 'text',
       });
   }
 
@@ -81,5 +100,5 @@ export class ApiServiceService {
       { responseType : 'text' }
       );
   }
-  
+    /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS ENDS---///////////////
 }

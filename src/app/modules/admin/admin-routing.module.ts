@@ -5,7 +5,6 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { HeaderComponent } from './components/header/header.component';
 import { ProductDashboardComponent } from './components/product-dashboard/product-dashboard.component';
 import { ProductHomepageComponent } from './components/product-homepage/product-homepage.component';
-
 const routes: Routes = [
   { path: '', component: HeaderComponent, 
     children:[
