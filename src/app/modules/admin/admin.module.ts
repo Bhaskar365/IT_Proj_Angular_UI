@@ -20,13 +20,14 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     ProductDashboardComponent,
     HeaderComponent,
     FooterComponent,
-    ProductHomepageComponent,
+    // ProductHomepageComponent,
     AddProductComponent,
     EditProductComponent,
     SideNavComponent
@@ -44,7 +45,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatSortModule,
     MatPaginatorModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    ProductHomepageComponent,
+    MatButtonModule
   ]
 })
 export class AdminModule { }

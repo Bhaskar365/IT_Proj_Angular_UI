@@ -12,6 +12,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServiceService } from './services/api.service.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ApiServiceService } from './services/api.service.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatIconModule,
     BrowserAnimationsModule,
     FontAwesomeModule,
     ReactiveFormsModule,

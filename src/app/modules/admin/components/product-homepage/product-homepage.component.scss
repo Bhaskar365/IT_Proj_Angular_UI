@@ -1,18 +1,104 @@
-table{
-    width:100%;
+@media screen and (min-width:300px) {
+
+    mat-form-field {
+        width: 66% !important;
+        margin-left: 1rem;
+        margin-top: 1rem;
+        height: 76px !important;
+    }
+
+    mat-form-field {
+        mat-label {
+            font-family: cursive;
+            font-size: smaller;
+        }
+    }
+
+    #addNew{
+        font-size: xx-small;
+        height: 26px !important;
+        width: 15px !important;
+        text-wrap: nowrap;
+    }
+
+    #addNew>mat-icon{
+        border:2px solid red;
+    }
+
+    #mainTableDiv {
+        width: 91% !important;
+        margin-left: 1rem;
+        margin-right: auto;
+    }
+
+    table {
+        width: 69% !important;
+        table-layout: fixed;
+        white-space: nowrap;
+    }
+
+    .mat-mdc-form-field {
+        font-size: 14px;
+        width: 100%;
+    }
+
+    td {
+        width: 25%;
+        font-size: xx-small;
+        overflow: auto;
+    }
+
+    th {
+        color: white;
+        background-color: #06399a !important;
+        border: 1px solid #948a8a;
+        font-family: sans-serif;
+        width: 22% !important;
+        font-size: 8px;
+    }
+
+
+    #actionBtn>#pencil {
+        margin-left: -11px;
+        font-size: 16px;
+        margin-right: 9px;
+        color: #000000;
+        border: 1px solid #ccb5b5;
+        background-color: beige;
+        border-radius: 5px;
+        padding: 3px 3px 4px 4px;
+    }
+
+    #actionBtn>#trash {
+        margin-left: -6px;
+        font-size: 16px;
+        margin-right: 8px;
+        color: #ff0100;
+        border: 1px solid #ccb5b5;
+        background-color: beige;
+        border-radius: 5px;
+        padding: 3px 3px 4px 4px;
+    }
+
+
+
 }
 
-.mat-mdc-form-field{
-    font-size: 14px;
-    width: 100%;
-}
 
-td,th{
-    width: 25%;
-}
+// table{
+//     width:90% !important;
+// }
 
-mat-form-field{
-    padding:10px;
-    // border:2px solid red;
-    max-width:25%;
-}
+// .mat-mdc-form-field{
+//     font-size: 14px;
+//     width: 100%;
+// }
+
+// td,th{
+//     width: 25%;
+// }
+
+// mat-form-field{
+//     padding:10px;
+//     max-width:25%;
+// }

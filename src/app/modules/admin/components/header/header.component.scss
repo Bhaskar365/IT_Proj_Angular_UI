@@ -1,77 +1,120 @@
 
-mat-toolbar{
-    background-image:linear-gradient(#003082,#5788db);
-    color:white;
-    display: flex;
-    justify-content: space-between;
+// mat-toolbar{
+//     background-image:linear-gradient(#003082,#5788db);
+//     color:white;
+//     display: flex;
+//     justify-content: space-between;
     
-    .user-info{
-        display: flex;
-        align-items: center;
-        span{
-            position: absolute;
-            right: 0.5rem;
-        }
-        mat-icon{
-            transform: scale(1.4);
-        }
-    }
-}
-#icon{
-    font-size: 2rem;
-}
-
-#settingIcon{
-    font-size: larger;
-    cursor: pointer;
+//     .user-info{
+//         display: flex;
+//         align-items: center;
+//         span{
+//             position: absolute;
+//             right: 0.5rem;
+//         }
+//         mat-icon{
+//             transform: scale(1.4);
+//         }
+//     }
+// }
+// #icon{
     
-}
-
-
-mat-sidenav-container{
-    position: relative;
-    width:100%;
-    height: 100%;
-
-    mat-sidenav{
-        background-image:linear-gradient(#003082,#5788db);
-        width:140px;
-
-        
-        mat-list{
-            margin-top: 1rem;
-            text-align: center;
-            color:white;
-            cursor: pointer;
-        }
-    }
-}
-
-
-
-// @media screen and (min-width:200px){
-    
-//     .example-container{
-//         border:2px solid red;
-//     }
-
-
-
-//     mat-toolbar{
-//        height:4px;
-//         color:white;
-//         font-size: small;
-//     }
-//     #icon{
-//         font-size: small;
-//         border:2px solid yellow;
-//     }
-//     mat-sidenav{
-//         background-image:linear-gradient(#003082,#5788db);
-        
-//         width: 70px !important;
-//         font-size: small;
-//     }
-    
+//     font-weight: 500;
+//     border:2px solid darksalmon;
+//     vertical-align: middle;
+//     font-size: xx-large;
 // }
 
+// #settingIcon{
+//     font-size: larger;
+//     cursor: pointer;    
+// }
+
+// mat-sidenav-container{
+//     position: relative;
+//     width:100%;
+//     height: 100%;
+    
+//     mat-sidenav{
+//         background-image:linear-gradient(#003082,#5788db);
+//         width:200px;
+//         border:2px solid red;    
+//         mat-list{
+//             margin-top: 1rem;
+//             text-align: center;
+//             color:white;
+//             cursor: pointer;
+//         }
+//     }
+// }
+
+// mat-sidenav-content{
+    
+//     margin-left: 5rem;
+//     margin-right: 2rem;
+//     margin-top: 2rem;
+//     border:2px solid green;
+// }
+
+@media screen and (min-width:300px)
+{
+    mat-toolbar{
+        background-image: linear-gradient(180deg, #1264ef, #000 100%, #ff8100 0);
+        position: relative;
+        display: flex;
+        color: white;
+        padding-left: 0px;
+        padding-right: 0px;
+    
+        .user-info{
+            position: absolute;
+            right:12px;
+        }
+        mat-toolbar-row{
+            span {
+                
+                font-family: sans-serif;
+                font-size:x-small;
+            } 
+        }
+    }
+    
+    // #settingMenu{
+    //     border:2px solid red;
+    // }
+
+    mat-sidenav-container{
+        
+        height:90vh;
+        width:100%;
+        mat-sidenav{
+            color:white;
+            background-color: #182b3a;
+            background-image: linear-gradient(315deg, #008eff 0%, #00060a 74%);
+            font-size: smaller;
+            width: 25%;
+            text-align: center;
+    
+            mat-list {
+                font-size: smaller;
+            } 
+        }
+    }
+
+    // #mainTable{
+    //     border:2px solid red;
+    //     // margin-left: 9px;
+    //     // margin-top: 6px;
+    //     // margin-right: auto;
+    // }
+    
+    
+}
+
+// @media screen and (min-width:1200px){
+//     mat-toolbar{
+//         border:2px solid darkred;
+//         color:green;
+//         background-color: dodgerblue;
+//     }
+// }

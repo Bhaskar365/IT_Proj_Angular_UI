@@ -1,3 +1,4 @@
+
 <meta name="viewport" content="width=device-width,initial-scale=1.0"> 
 <mat-toolbar>
     <mat-toolbar-row>
@@ -15,7 +16,7 @@
       </span>
     </div>
 
-    <mat-menu #userName="matMenu">
+    <mat-menu #userName="matMenu" id="settingMenu">
         <button mat-menu-item routerLink="/users/profile">
             <mat-icon>account_box</mat-icon>
             <span>Profile</span>
@@ -28,13 +29,15 @@
 
     </mat-toolbar-row>
   </mat-toolbar>
+  
   <mat-sidenav-container class="example-container">
-    <mat-sidenav #drawer mode="side" opened role="navigation">
-       <mat-list routerLink="#">Home</mat-list>
+    <mat-sidenav #drawer mode="side">
+      <!-- <mat-sidenav #drawer mode="over"> -->
+       <mat-list  routerLinkActive="#">Home</mat-list>
        <mat-list routerLink="#">Bar Graph</mat-list>
        <mat-list routerLink="#">Pie Graph</mat-list>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content id="mainTable">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
