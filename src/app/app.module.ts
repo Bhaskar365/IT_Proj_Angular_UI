@@ -9,10 +9,11 @@ import { SignUpComponent } from './External_components/sign-up/sign-up.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServiceService } from './services/api.service.service';
 import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpClientModule,
     JwtModule.forRoot({
       config:{

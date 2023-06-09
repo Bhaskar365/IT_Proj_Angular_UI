@@ -18,19 +18,24 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { BarGraphComponent } from './components/bar-graph/bar-graph.component';
+import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import {  MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     ProductDashboardComponent,
     HeaderComponent,
     FooterComponent,
-    // ProductHomepageComponent,
-    AddProductComponent,
     EditProductComponent,
-    SideNavComponent
+    SideNavComponent,
+    BarGraphComponent,
+    PieGraphComponent,
   ],
   imports: [
     CommonModule,
@@ -47,7 +52,12 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatFormFieldModule,
     ProductHomepageComponent,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule,
+    AddProductComponent,
+    MatDatepickerModule,
+    FormsModule,
+    MatSelectModule
   ]
 })
 export class AdminModule { }
