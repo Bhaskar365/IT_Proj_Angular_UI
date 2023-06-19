@@ -77,3 +77,25 @@
     background-color: #0a58ca;
   }
 }
+
+@media screen and (min-width:500px) 
+{
+  .headerBox
+  {
+    font-size: larger;
+  }
+  mat-form-field {
+    width: 50% !important;
+    padding: 4px;
+  }
+  
+  #dateBox{
+    border: 1px solid #908989;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    padding: 10px;
+    margin-left: 0px;
+    margin-right: 1px;
+  }
+}
+
