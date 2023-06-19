@@ -1,4 +1,38 @@
-.headerBox{
+@media screen and (min-width:300px) {
+
+  .lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+
+  .lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #dfc;
+    border-color: #dfc transparent #dfc transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+
+
+
+  .headerBox {
+
     margin-top: 10px;
     margin-left: 14px;
     margin-right: 15px;
@@ -6,23 +40,40 @@
     color: white;
     background: linear-gradient(2deg, #1550f2, black);
     font-family: cursive;
-}
+  }
 
-#selectionBox{
+  #selectionBox {
     width: 100%;
-}
+  }
 
-.example-form {
-   
+  .example-form {
     height: 75vh;
-    margin-top: 1rem;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     width: 94%;
     padding: 1rem;
   }
-  
+
   .example-full-width {
     width: 100%;
   }
+
+  #dateBox {
+    // border: 2px solid red; 
+    padding: 7px 1px;
+    white-space: nowrap;
+    line-height: 28px;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  #dateBox>mat-label{
+    font-size: x-small;
+  }
+
+  #submitBtn {
+    background-color: #0a58ca;
+  }
+}

@@ -7,23 +7,35 @@ import { MatInputModule } from '@angular/material/input';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs';
+import { Router } from '@angular/router';
+import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { ApiServiceService } from 'src/app/services/api.service.service';
+import { MatButtonModule } from '@angular/material/button';
+import { NgToastService } from 'ng-angular-popup';
 
 @Component({
   selector: 'app-add-product',
   templateUrl: './add-product.component.html',
   styleUrls: ['./add-product.component.scss'],
   standalone:true,
-  imports:[MatFormFieldModule,MatInputModule,MatDatepickerModule,MatNativeDateModule,
-           ReactiveFormsModule,FormsModule,MatSelectModule,CommonModule]
-
+  imports:[MatFormFieldModule,MatInputModule,MatDatepickerModule,
+          MatNativeDateModule,
+           ReactiveFormsModule,FormsModule,MatSelectModule,
+           CommonModule,MatIconModule,MatDialogModule,MatButtonModule]
 })
+
 export class AddProductComponent implements OnInit{
 
   form!: FormGroup; 
+  x:any;
+  isDataLoading:boolean = false;
 
   addForm = new FormGroup({
 
-    token : new FormControl('', [Validators.required]),
+    token: new FormControl('', [Validators.required]),
     DevType : new FormControl('', [Validators.required]),
     DevTypeOther : new FormControl('', [Validators.required]),
     Make : new FormControl('', [Validators.required]),
@@ -39,7 +51,7 @@ export class AddProductComponent implements OnInit{
     Toner : new FormControl('', [Validators.required]),
     MacAddress : new FormControl('', [Validators.required]),
     IPAddress : new FormControl('', [Validators.required]),
-    CellAddress : new FormControl('', [Validators.required])
+    CellNumber : new FormControl('', [Validators.required])
     
   })
 
@@ -91,22 +103,45 @@ export class AddProductComponent implements OnInit{
   get IPAddress_Func(){
     return this.addForm.get('IPAddress');
   }
-  get CellAddress_Func(){
+  get CellNumber_Func(){
     return this.addForm.get('CellAddress');
   }
 
-  constructor (private fb: FormBuilder) {
-    this.form = this.fb.group({
-      // DON'T FORGET THE FORM INITIALISATION
-    });
-  }
+  constructor ( private fb: FormBuilder,
+                private http:HttpClient,private route:Router,
+                private dialogRef:MatDialog,
+                private api:ApiServiceService,
+                private toast:NgToastService
+               ) {   console.log('constructor'); }
 
-  ngOnInit():void {
+  ngOnInit():void { 
+
+    console.log('ngOnInit');
 
   }
 
   addFormSubmit(){
     console.log(this.addForm.value);
+    // string type assertion
+    this.x = this.addForm.value as string;
+
+    this.api.addDataFunc(this.x)
+        .pipe(catchError((err:any)=>{
+            console.log(typeof(err));
+            this.toast.error({detail:err, summary:'Error',duration:5000});
+            this.route.navigate(['/error']);  
+            return err;
+    })).subscribe(res=>{
+      console.log(typeof(res));
+         this.isDataLoading = true;
+         this.toast.success({detail:'Details Added Successfully', summary:'Successful',duration:5000});
+         this.route.navigate(['/admin/product-homepage']);
+    });
+
+  }
+
+  goBackBtn(){
+    this.route.navigate(["admin/product-homepage"]);
   }
 
 }

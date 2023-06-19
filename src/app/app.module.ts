@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiServiceService } from './services/api.service.service';
 import { MatIconModule } from '@angular/material/icon';
+import { NgToastModule } from 'ng-angular-popup';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgToastModule,
     JwtModule.forRoot({
       config:{
         tokenGetter:()=>{

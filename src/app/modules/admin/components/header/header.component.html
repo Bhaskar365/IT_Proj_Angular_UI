@@ -33,7 +33,7 @@
   <mat-sidenav-container class="example-container">
     <mat-sidenav #drawer mode="side">
       <!-- <mat-sidenav #drawer mode="over"> -->
-       <mat-list  routerLinkActive="/">Home</mat-list>
+       <mat-list (click)="homeRouter()">Home</mat-list>
        <mat-list routerLink="add-product">Add New</mat-list>
        <mat-list routerLink="bar-graph">Bar Graph</mat-list>
        <mat-list routerLink="pie-graph">Pie Graph</mat-list>

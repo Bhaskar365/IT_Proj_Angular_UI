@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiServiceService } from 'src/app/services/api.service.service';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -9,17 +10,22 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   
-  constructor(private authServ:ApiServiceService,private router:Router) {}
+  name!:string;
+
+  constructor(public api:ApiServiceService,private router:Router) {}
 
   @Output() menuClicked = new EventEmitter<boolean>();
   showFiller = false;
 
-
   logOut(){
     
-    this.authServ.removeToken();
+    this.api.removeToken();
     this.router.navigateByUrl('/login');
 
+  }
+
+  homeRouter(){
+    this.router.navigate(["admin/product-homepage"]);
   }
 
 }

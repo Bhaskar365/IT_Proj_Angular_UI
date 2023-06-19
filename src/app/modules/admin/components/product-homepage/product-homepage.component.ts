@@ -49,7 +49,6 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
     this.serv.getAllDataFunc().subscribe((res:any)=>{
       this.inventoryData = JSON.parse(res);
       this.dataSource.data = this.inventoryData;
-      console.log(this.inventoryData);
     });
   }
 

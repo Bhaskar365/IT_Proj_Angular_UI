@@ -7,6 +7,7 @@ import { ProductDashboardComponent } from './components/product-dashboard/produc
 import { ProductHomepageComponent } from './components/product-homepage/product-homepage.component';
 import { BarGraphComponent } from './components/bar-graph/bar-graph.component';
 import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
+import { ErrorCompComponent } from './components/error-comp/error-comp.component';
 const routes: Routes = [
   { path: '', component: HeaderComponent, 
     children:[
@@ -16,6 +17,7 @@ const routes: Routes = [
       { path: 'pie-graph', component: PieGraphComponent },
       { path: 'add-product', component: AddProductComponent },
       { path: 'edit-product', component: EditProductComponent },
+      { path: 'error', component: ErrorCompComponent},
       { path: '' , redirectTo:'/admin/product-homepage', pathMatch:'full' }
     ],
   },

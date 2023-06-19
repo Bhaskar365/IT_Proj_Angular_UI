@@ -2,7 +2,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { BehaviorSubject, catchError,map } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, catchError,map } from 'rxjs';
+import { AddDataInterface } from '../modules/admin/components/models/userModel';
 
 interface Device_Data {
   data : string;
@@ -17,16 +18,31 @@ export class ApiServiceService
 {
   constructor(private http:HttpClient,private router:Router) { }
 
+  sub$:Subject<any> = new Subject<any>();
+
   //////////////////INVENTORY API////////////////////////////
+
+  getAllDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
+  addDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
+  
   getAllDataFunc()
   {
-    return this.http.post<any>("https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll",
+    return this.http.post<any>(`${this.getAllDataUrl}`,
     { token:"A12F7A58-842D-4111-A44D-5F8C4E1AA521" }).pipe(catchError((err:any)=>{
       this.router.navigate(['/error']);
       return err;
     }),map(((res:Device_Data)=>{
       return res.data;
     })));
+  }
+
+  addDataFunc(data:AddDataInterface| null | undefined)
+  {
+      return this.http.post<any>(`${this.addDataUrl}`,data).pipe(catchError((err)=>{
+        return err;
+      }), map(((res:any)=>{
+        return res;
+      })));
   }
 
   /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS STARTS---///////////////
@@ -72,8 +88,8 @@ export class ApiServiceService
   loadCurrentUser(){
       const token = localStorage.getItem('access_token');
       const userInfo = token != null ? this.jwtHelperService.decodeToken(token):null;
-  
-      const data = userInfo ? {
+
+      let data = userInfo ? {
         id:userInfo.id,
         firstname : userInfo.firstname,
         lastname : userInfo.lastname,

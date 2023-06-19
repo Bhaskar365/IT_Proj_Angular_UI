@@ -26,6 +26,9 @@ import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {  MatSelectModule } from '@angular/material/select';
+import { ErrorCompComponent } from './components/error-comp/error-comp.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NgToastModule } from 'ng-angular-popup';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,7 @@ import {  MatSelectModule } from '@angular/material/select';
     SideNavComponent,
     BarGraphComponent,
     PieGraphComponent,
+    ErrorCompComponent,
   ],
   imports: [
     CommonModule,
@@ -57,7 +61,10 @@ import {  MatSelectModule } from '@angular/material/select';
     AddProductComponent,
     MatDatepickerModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule,
+    MatButtonModule,
+    NgToastModule
   ]
 })
 export class AdminModule { }
