@@ -1,120 +1,105 @@
 
-// mat-toolbar{
-//     background-image:linear-gradient(#003082,#5788db);
-//     color:white;
-//     display: flex;
-//     justify-content: space-between;
-    
-//     .user-info{
-//         display: flex;
-//         align-items: center;
-//         span{
-//             position: absolute;
-//             right: 0.5rem;
-//         }
-//         mat-icon{
-//             transform: scale(1.4);
-//         }
-//     }
-// }
-// #icon{
-    
-//     font-weight: 500;
-//     border:2px solid darksalmon;
-//     vertical-align: middle;
-//     font-size: xx-large;
-// }
+    #icon:hover{
+        transform: scale(1.3);
+        color:rgb(0, 255, 30);
+        cursor: pointer;
+     }
 
-// #settingIcon{
-//     font-size: larger;
-//     cursor: pointer;    
-// }
-
-// mat-sidenav-container{
-//     position: relative;
-//     width:100%;
-//     height: 100%;
-    
-//     mat-sidenav{
-//         background-image:linear-gradient(#003082,#5788db);
-//         width:200px;
-//         border:2px solid red;    
-//         mat-list{
-//             margin-top: 1rem;
-//             text-align: center;
-//             color:white;
-//             cursor: pointer;
-//         }
-//     }
-// }
-
-// mat-sidenav-content{
-    
-//     margin-left: 5rem;
-//     margin-right: 2rem;
-//     margin-top: 2rem;
-//     border:2px solid green;
-// }
-
-@media screen and (min-width:300px)
-{
     mat-toolbar{
-        background-image: linear-gradient(180deg, #1264ef, #000 100%, #ff8100 0);
+        background-image: linear-gradient(180deg, #1264ef, #000 100%);
         position: relative;
         display: flex;
         color: white;
         padding-left: 0px;
         padding-right: 0px;
+        cursor: pointer;
     
         .user-info{
             position: absolute;
             right:12px;
+            display: flex;
+            cursor: pointer;
         }
         mat-toolbar-row{
             span {
-                
-                font-family: sans-serif;
+                font-family: cursive;
                 font-size:x-small;
+                margin-left: 7px;
+                cursor: pointer;
             } 
         }
     }
     
-    // #settingMenu{
-    //     border:2px solid red;
-    // }
-
     mat-sidenav-container{
         
         height:90vh;
         width:100%;
+        cursor: pointer;
         mat-sidenav{
             color:white;
-            background-color: #182b3a;
-            background-image: linear-gradient(315deg, #008eff 0%, #00060a 74%);
+            background-image: linear-gradient(0deg, #008eff 0%, #00060a 87%);
             font-size: smaller;
             width: 25%;
             text-align: center;
-    
+            cursor: pointer;
             mat-list {
                 font-size: smaller;
+                cursor: pointer;
             } 
         }
     }
 
-    // #mainTable{
-    //     border:2px solid red;
-    //     // margin-left: 9px;
-    //     // margin-top: 6px;
-    //     // margin-right: auto;
-    // }
-    
-    
+@media screen and (min-width:500px){
+     
+    mat-toolbar{
+        #icon{
+            font-size: x-large;
+            cursor: pointer;
+        }
+        #headerText{
+            font-size: medium;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        #userSpan{ 
+            font-size: medium;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+     }
+
+     mat-sidenav-container {
+        mat-sidenav {
+            font-size: large;
+            font-family: cursive;
+            width: 20%;
+            mat-list{ 
+                padding: 12px;
+                cursor: pointer;
+            }
+        }
+     }
+
+     #icon:hover{
+        transform: scale(1.3);
+        color:rgb(0, 255, 30);
+        cursor: pointer;
+     }
 }
 
-// @media screen and (min-width:1200px){
-//     mat-toolbar{
-//         border:2px solid darkred;
-//         color:green;
-//         background-color: dodgerblue;
-//     }
-// }
+mat-sidenav-container{
+    mat-sidenav{
+        mat-list:hover {
+            border:2px solid rgb(10, 13, 101);
+            background-color: #0dc754;
+            cursor: pointer;
+        }
+        mat-list:active{
+            background-color: rgb(255, 98, 0);
+        }
+    }
+}
+
+.mat-list-item-focus{
+    background-color: rgb(255, 0, 106);
+}

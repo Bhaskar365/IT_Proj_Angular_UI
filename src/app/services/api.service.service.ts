@@ -24,6 +24,7 @@ export class ApiServiceService
 
   getAllDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
   addDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
+  getUserDataById = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Get";
   
   getAllDataFunc()
   {
@@ -45,8 +46,20 @@ export class ApiServiceService
       })));
   }
 
+  public getDataById(id:any){
+      return this.http.post<any>(`${this.getDataById}`,
+      { token:"A12F7A58-842D-4111-A44D-5F8C4E1AA521", DevId: id}
+      ).pipe(catchError((err)=>{
+        return err;
+      }),
+      map((res:Device_Data)=>{
+        console.log(res);
+        return res.data;
+      }));
+  }
+
   /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS STARTS---///////////////
-  baseUrl = "https://localhost:7269/api/Users/";
+  baseUrl = "https://localhost:7053/api/User/";
 
   currentUser:BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
@@ -54,8 +67,7 @@ export class ApiServiceService
 
   createAccount(user:Array<String|null|undefined>) {
 
-      return this.http.post(
-          this.baseUrl + 'CreateUser',
+      return this.http.post( this.baseUrl + 'Create',
           {
             FirstName:user[0],
             LastName:user[1],
@@ -64,21 +76,21 @@ export class ApiServiceService
             Gender:user[4],
             Pwd:user[5]
           },
-          {  responseType: 'text' }
+            {  responseType: 'text' }
           );
   }
 
-  login(loginInfo:any){
+  // login(loginInfo:any){
     
-    let params = new HttpParams()
-      .append('email',loginInfo.Email)
-      .append('password',loginInfo.Pwd);
+  //   let params = new HttpParams()
+  //     .append('email',loginInfo.Email)
+  //     .append('password',loginInfo.Pwd);
 
-      return this.http.get(this.baseUrl + 'LoginUser', {
-        params:params,
-        responseType: 'text',
-      });
-  }
+  //     return this.http.get(this.baseUrl + 'LoginUser', {
+  //       params:params,
+  //       responseType: 'text',
+  //     });
+  // }
 
    setToken(token: string) {
     localStorage.setItem('access_token', token);

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgToastService } from 'ng-angular-popup';
 import { delay } from 'rxjs';
 import ValidateForm from 'src/app/helpers/validateform';
 import { ApiServiceService } from 'src/app/services/api.service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,10 +20,12 @@ export class LoginComponent implements OnInit {
   responseMsg: any = '';
   loginForm!: FormGroup;
   isUserValid: boolean = false;
+  isDataLoading = true;
 
   constructor(private fb: FormBuilder,
     private loginAuth: ApiServiceService,
-    private router: Router) { }
+    private router: Router,
+    private toastServ: NgToastService) { }
 
   ngOnInit(): void {
 
@@ -50,17 +54,39 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.email,
       this.loginForm.value.pwd
     ]
-    ).subscribe(res=>{
-      if(res=='Failure'){
+    ).subscribe(res => {
+      if (res == 'Failure') 
+      {
+        
         this.isUserValid = false;
         this.responseMsg = 'Login Unsuccessful';
+        Swal.fire({
+          title: 'Authentication Unsuccessful',
+          text: 'Error Logging In',
+          icon: 'error',
+          width:'800px',
+          timer: 1500,
+          timerProgressBar: true
+        });
+        setTimeout(()=>{
+          this.isDataLoading = false;
+          window.location.reload();
+        },2000)
       }
       else {
-          this.isUserValid = true;
-          this.loginAuth.setToken(res);
-          this.responseMsg = 'Login Successful';
-          delay(1000);
-          this.router.navigateByUrl('admin/product-homepage');
+        this.isUserValid = true;
+        this.loginAuth.setToken(res);
+        this.responseMsg = 'Login Successful';
+        this.isDataLoading = false;
+        Swal.fire({
+          title: 'Authentication Successful',
+          text: 'Login Successfully',
+          icon: 'success',
+          width:'800px',
+          timer:1500,
+          timerProgressBar:true,
+      })
+        this.router.navigateByUrl('admin/product-homepage');
       }
     });
   }

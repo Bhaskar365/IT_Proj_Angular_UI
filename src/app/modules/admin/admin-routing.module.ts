@@ -8,6 +8,7 @@ import { ProductHomepageComponent } from './components/product-homepage/product-
 import { BarGraphComponent } from './components/bar-graph/bar-graph.component';
 import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
 import { ErrorCompComponent } from './components/error-comp/error-comp.component';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 const routes: Routes = [
   { path: '', component: HeaderComponent, 
     children:[
@@ -16,9 +17,10 @@ const routes: Routes = [
       { path: 'bar-graph', component: BarGraphComponent },
       { path: 'pie-graph', component: PieGraphComponent },
       { path: 'add-product', component: AddProductComponent },
-      { path: 'edit-product', component: EditProductComponent },
+      { path: 'edit-product/:userId', component: EditProductComponent },
+      { path: 'view-product', component:ViewProductComponent },
       { path: 'error', component: ErrorCompComponent},
-      { path: '' , redirectTo:'/admin/product-homepage', pathMatch:'full' }
+      { path: '' , redirectTo:'product-homepage', pathMatch:'full' }
     ],
   },
 ];

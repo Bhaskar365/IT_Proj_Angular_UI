@@ -5,10 +5,10 @@
       <!-- <button type="button" aria-label="Toggle sidenav" mat-icon-button  color="primary"> -->
         <i id="icon" class="fa fa-bars" (click)="drawer.toggle()"></i>
       <!-- </button> -->
-      <span>&nbsp;Inventory Management System</span>
+      <span id="headerText">&nbsp;Inventory Management System</span>
       <div class="user-info">
-        <span>
-            Hi, User
+        <span id="userSpan">
+            Hi, {{this.x.firstname}}
         <!-- <button mat-icon-button  id="settingIcon"> -->
             <!-- <mat-icon [matMenuTriggerFor]="userName">account_circle</mat-icon> -->
             <i class="fa fa-user-circle-o" aria-hidden="true" id="settingIcon" [matMenuTriggerFor]="userName"></i>
@@ -33,7 +33,9 @@
   <mat-sidenav-container class="example-container">
     <mat-sidenav #drawer mode="side">
       <!-- <mat-sidenav #drawer mode="over"> -->
-       <mat-list (click)="homeRouter()">Home</mat-list>
+       <mat-list (click)="homeRouter()" 
+          routerLinkActive=".mat-list-item-focus" 
+          [routerLinkActiveOptions]="{exact:true}">Home</mat-list>
        <mat-list routerLink="add-product">Add New</mat-list>
        <mat-list routerLink="bar-graph">Bar Graph</mat-list>
        <mat-list routerLink="pie-graph">Pie Graph</mat-list>

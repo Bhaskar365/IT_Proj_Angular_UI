@@ -1,157 +1,153 @@
-
 <div class="headerBox">
     <span>Add New Product</span>
-</div> 
+</div>
 
 <span [hidden]="!isDataLoading">
-    <div class="lds-dual-ring"></div>
-</span>
+    <span class="loader"></span>
+  </span>
 
-<form class="example-form" [formGroup]="addForm" (ngSubmit)="addFormSubmit()">
+<form class="example-form" 
+    [formGroup]="addForm" 
+    (ngSubmit)="addFormSubmit()" [hidden]="isDataLoading">
 
     <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>Token</mat-label>
-      <input matInput placeholder="Enter Valid Token" formControlName="token">
-      <span class="form-text text-danger" *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)"></span>
+        <mat-label>Token</mat-label>
+        <input matInput placeholder="Enter Valid Token" formControlName="token">
+        <span class="form-text text-danger"
+            *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field id="selectionBox" appearance="outline">
         <mat-label>Select Device Type</mat-label>
         <mat-select disableRipple formControlName="DevType">
-          <mat-option value="Laptop/Desktop">Laptop/Desktop</mat-option>
-          <mat-option value="Misc">Misc</mat-option>
-          <mat-option value="Mobile/Phone">Mobile/Phone</mat-option>
-          <mat-option value="Monitor">Monitor</mat-option>
-          <mat-option value="Polycom">Polycom</mat-option>
-          <mat-option value="Printer">Printer</mat-option>
-          <mat-option value="Server">Server</mat-option>
+            <mat-option value="Laptop/Desktop">Laptop/Desktop</mat-option>
+            <mat-option value="Misc">Misc</mat-option>
+            <mat-option value="Mobile/Phone">Mobile/Phone</mat-option>
+            <mat-option value="Monitor">Monitor</mat-option>
+            <mat-option value="Polycom">Polycom</mat-option>
+            <mat-option value="Printer">Printer</mat-option>
+            <mat-option value="Server">Server</mat-option>
         </mat-select>
-        <span class="form-text text-danger" *ngIf="DevType_Func?.errors?.['required'] && (DevType_Func?.touched || DevType_Func?.dirty)"></span>
-      </mat-form-field>
+        <span class="form-text text-danger"
+            *ngIf="DevType_Func?.errors?.['required'] && (DevType_Func?.touched || DevType_Func?.dirty)"></span>
+    </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Other Device Type</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="DevTypeOther">
-        <span class="form-text text-danger" *ngIf="DevTypeOther_Func?.errors?.['required'] && (DevTypeOther_Func?.touched || DevTypeOther_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="DevTypeOther_Func?.errors?.['required'] && (DevTypeOther_Func?.touched || DevTypeOther_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Make</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Make">
-        <span class="form-text text-danger" *ngIf="Make_Func?.errors?.['required'] && (Make_Func?.touched || Make_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Make_Func?.errors?.['required'] && (Make_Func?.touched || Make_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Model</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Model">
-        <span class="form-text text-danger" *ngIf="Model_Func?.errors?.['required'] && (Model_Func?.touched || Model_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Model_Func?.errors?.['required'] && (Model_Func?.touched || Model_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Owner</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Owner">
-        <span class="form-text text-danger" *ngIf="Owner_Func?.errors?.['required'] && (Owner_Func?.touched || Owner_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Owner_Func?.errors?.['required'] && (Owner_Func?.touched || Owner_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Location</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Location">
-        <span class="form-text text-danger" *ngIf="Location_Func?.errors?.['required'] && (Location_Func?.touched || Location_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Location_Func?.errors?.['required'] && (Location_Func?.touched || Location_Func?.dirty)"></span>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width" appearance="outline"> 
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Serial</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Serial">
-        <span class="form-text text-danger" *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)"></span>
     </mat-form-field>
 
-    <!-- <div class="col-sm-12">
-        <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Purchase Date</mat-label>
-            <input matInput formControlName="PurchaseDate" [matDatepicker]="picker">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker  #picker></mat-datepicker>
-        </mat-form-field>
-    </div>
+    <!---Purchase date----->
+    <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
+        <mat-label id="pDate">Purchase Date</mat-label>
+        <input matInput formControlName="PurchaseDate" [matDatepicker]="picker" (dateInput)="dateChange1(picker)"
+            [(ngModel)]="modifiedDate1">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
 
-    <div class="col-sm-12">
-        <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Warranty Exp. Date</mat-label>
-            <input matInput formControlName="WarrantyExpDate" [matDatepicker]="picker2">
-            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-            <mat-datepicker  #picker2></mat-datepicker>
-        </mat-form-field>
-    </div>
+    <!---Warranty date----->
+    <mat-form-field class="example-full-width" appearance="outline" id="warrDate">
+        <mat-label id="wexDate">Warranty Exp. Date</mat-label>
+        <input matInput formControlName="WarrantyExpDate" [matDatepicker]="picker2" (dateInput)="dateChange2(picker2)"
+            [(ngModel)]="modifiedDate2">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
 
-    <div class="col-sm-12">
-        <mat-form-field class="w-100" appearance="outline">
-            <mat-label>Service Exp. Date</mat-label>
-            <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3">
-            <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-            <mat-datepicker  #picker3></mat-datepicker>
-        </mat-form-field>
-    </div> -->
-
-    <!---purchase date----->
-        <div class="example-full-width" id="dateBox" appearance="outline">
-            <mat-label>Purchase Date</mat-label>&nbsp;
-            <input type="date"  formControlName="PurchaseDate">
-            <span class="form-text text-danger" *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)"></span>
-        </div>
-
-    <!---warranty date----->
-    <div class="example-full-width" id="dateBox" appearance="outline">
-        <mat-label>Warranty Exp. Date</mat-label>&nbsp;
-        <input type="date"  formControlName="WarrantyExpDate">
-        <span class="form-text text-danger" *ngIf="WarrantyExpDate_Func?.errors?.['required'] && (WarrantyExpDate_Func?.touched || WarrantyExpDate_Func?.dirty)"></span>
-    </div>
-
-    <!---service date----->
-    <div class="example-full-width" id="dateBox" appearance="outline">
-        <mat-label>Service Exp. Date</mat-label>&nbsp;
-        <input type="date"  formControlName="ServiceExpDate"> 
-        <span class="form-text text-danger" *ngIf="ServiceExpDate_Func?.errors?.['required'] && (ServiceExpDate_Func?.touched || ServiceExpDate_Func?.dirty)"></span>
-    </div> 
+    <!---Service date----->
+    <mat-form-field class="example-full-width" appearance="outline" id="servDate">
+        <mat-label id="servexDate">Service Exp. Date</mat-label>
+        <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3" (dateInput)="dateChange3(picker3)"
+            [(ngModel)]="modifiedDate3">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+    </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Value</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Value">
-        <span class="form-text text-danger" *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Size</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Size">
-        <span class="form-text text-danger" *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Toner</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Toner">
-        <span class="form-text text-danger" *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device MAC Address</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="MacAddress">
-        <span class="form-text text-danger" *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device IP Address</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="IPAddress">
-        <span class="form-text text-danger" *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)"></span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Cell Number</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="CellNumber">
-        <span class="form-text text-danger" *ngIf="CellNumber_Func?.errors?.['required'] && (CellNumber_Func?.touched || CellNumber_Func?.dirty)"></span>
+        <span class="form-text text-danger"
+            *ngIf="CellNumber_Func?.errors?.['required'] && (CellNumber_Func?.touched || CellNumber_Func?.dirty)"></span>
     </mat-form-field>
 
-    <button type="submit" class="btn btn-primary" id="submitBtn" [disabled]="addForm.invalid" >Submit</button>
-    &nbsp;<button type="button" class="btn btn-info" (click)="goBackBtn()">Go Back</button>
-
-
-  </form> 
-
+    <div>
+        <button type="submit" [disabled]="!addForm.valid" 
+            class="btn btn-primary float-end ms-2"
+            id="submitBtn">Submit</button>
+        <button id="goBackButton" type="button" class="btn btn-info float-end"
+            (click)="goBackBtn()"><mat-icon>keyboard_backspace</mat-icon>Back</button>
+    </div>
+</form>

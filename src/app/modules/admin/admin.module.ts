@@ -6,7 +6,7 @@ import { ProductDashboardComponent } from './components/product-dashboard/produc
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProductHomepageComponent } from './components/product-homepage/product-homepage.component';
-import { AddProductComponent } from './components/add-product/add-product.component';
+import {AddProductComponent} from './components/add-product/add-product.component';
 import { EditProductComponent } from './components/edit-product/edit-product.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
@@ -28,7 +28,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import {  MatSelectModule } from '@angular/material/select';
 import { ErrorCompComponent } from './components/error-comp/error-comp.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { NgToastModule } from 'ng-angular-popup';
+import { ViewProductComponent } from './components/view-product/view-product.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { NgToastModule } from 'ng-angular-popup';
     BarGraphComponent,
     PieGraphComponent,
     ErrorCompComponent,
+    ViewProductComponent,
   ],
   imports: [
     CommonModule,
@@ -63,8 +64,9 @@ import { NgToastModule } from 'ng-angular-popup';
     FormsModule,
     MatSelectModule,
     MatDialogModule,
-    MatButtonModule,
-    NgToastModule
+    MatListModule,
+    MatDialogModule,
+    MatInputModule
   ]
 })
 export class AdminModule { }

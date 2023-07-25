@@ -93,7 +93,6 @@ export class SignUpComponent implements OnInit {
       } else {
         this.isAccountCreated = false;
         this.displayMsg = 'Something went wrong';
-        
       }
     });
   }
