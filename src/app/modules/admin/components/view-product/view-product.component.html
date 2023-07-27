@@ -1,18 +1,28 @@
-<div class="container">
-    <p>Device Details </p>
-   <span>
-        <div>Device Id : {{this.x.DevId}}</div>
-        <div>Device Type : {{this.x.DevType}}</div>
-        <div>Device Type Other : {{this.x.DevTypeOther}}</div>
-        <div>Device Make : {{this.x.Make}}</div>
-        <div>Device Owner : {{this.x.Owner}}</div>
-        <div>Device Model: {{this.x.Model}}</div>
-        <div>Device Serial : {{this.x.Serial}}</div>
-        <div>Device Size : {{this.x.Size}}</div>
-        <div>Device Toner : {{this.x.Toner}}</div>
-        <div>Device Value : {{this.x.Value}}</div>
-        <div>Device Warranty Expiry Date : {{this.x.WarrantyExpDate | date}}</div>
-        <div>Device Service Expiry Date : {{this.x.ServiceExpDate | date}}</div>
-        <div>Device Purchase Date : {{this.x.PurchaseDate | date}} </div>
-   </span>
-</div>
+<mat-card>
+
+    <mat-card-title>
+            <span>Device Details</span>
+    </mat-card-title>
+
+    <mat-card-content id="excel-table">
+
+        <div><strong>Device Id : </strong>{{this.x.DevId}}</div>
+        <div><strong>Device Type : </strong>{{this.x.DevType}}</div>
+        <div><strong>Device Type Other : </strong>{{this.x.DevTypeOther}}</div>
+        <div><strong>Device Make : </strong>{{this.x.Make}}</div>
+        <div><strong>Device Owner : </strong>{{this.x.Owner}}</div>
+        <div><strong>Device Model: </strong>{{this.x.Model}}</div>
+        <div><strong>Device Serial : </strong>{{this.x.Serial}}</div>
+        <div><strong>Device Size : </strong>{{this.x.Size}}</div>
+        <div><strong>Device Toner : </strong>{{this.x.Toner}}</div>
+        <div><strong>Device Value : </strong>{{this.x.Value}}</div>
+        <div><strong>Device Warranty Expiry Date : </strong>{{this.x.WarrantyExpDate | date}}</div>
+        <div><strong>Device Service Expiry Date : </strong>{{this.x.ServiceExpDate | date}}</div>
+        <div><strong>Device Purchase Date : </strong>{{this.x.PurchaseDate | date}} </div>
+
+        <button mat-raised-button matTooltip="Close" type="button" color="warn" id="closeBtn" (click)="closeDialog()">Close</button>
+        <button mat-raised-button matTooltip="Export" type="button" color="accent" id="excelBtn" (click)="excelExport()">Export <img src="assets/excelIcon.png" id="excelImg"></button> 
+
+    </mat-card-content>
+
+</mat-card>

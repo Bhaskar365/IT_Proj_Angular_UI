@@ -1,5 +1,3 @@
-@media screen and (min-width:300px) {
-
   .loader {
     width: 48px;
     height: 48px;
@@ -13,6 +11,7 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
+
   .loader::after,
   .loader::before {
     content: '';  
@@ -32,6 +31,7 @@
     animation: rotationBack 0.5s linear infinite;
     transform-origin: center center;
   }
+  
   .loader::before {
     width: 32px;
     height: 32px;
@@ -106,10 +106,20 @@
   #submitBtn {
     background-color: #0a58ca;
   }
-}
 
-@media screen and (min-width:360px) 
-{
+  @media screen and (max-width:360px) {
+
+    .example-form{
+      height: 1395px;
+    }
+  }
+
+@media screen and (min-width:360px) {
+
+  .example-form{
+    height: 1390px;
+  }
+
   .loader {
     width: 48px;
     height: 48px;
@@ -123,6 +133,7 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
+
   .loader::after,
   .loader::before {
     content: '';  
@@ -142,6 +153,7 @@
     animation: rotationBack 0.5s linear infinite;
     transform-origin: center center;
   }
+
   .loader::before {
     width: 32px;
     height: 32px;
@@ -377,9 +389,13 @@
 
     width: 33% !important;
   }
-  #servDate{
 
+  #servDate{
     width: 34% !important;
+  }
+
+  .example-form{
+    height: 760px;
   }
 }
 

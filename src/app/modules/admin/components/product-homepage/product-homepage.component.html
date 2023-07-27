@@ -1,5 +1,4 @@
 
-
 <div *ngIf="tableData.length!=0" [hidden]="isDataLoading">
 
   <mat-form-field>
@@ -9,7 +8,7 @@
 
   <section>
     <div class="example-button-row" (click)="directToAddPage()">
-          <button mat-fab color="primary" matTooltip="Add Product" aria-label="Example icon button with a delete icon">
+          <button mat-fab color="primary" matTooltip="Add Product" aria-label="add icon">
             <mat-icon>add</mat-icon>
           </button>
     </div>
@@ -52,7 +51,7 @@
               aria-hidden="true" matTooltip="View" (click)="viewOnlyDetails(row)"></i>
 
             <i class="fa fa-pencil" id="pencil" 
-              aria-hidden="true" (click)="editProduct(row.DevId)" matTooltip="Edit"></i>
+              aria-hidden="true" (click)="editProduct(row)" matTooltip="Edit"></i>
               
             <i class="fa fa-trash-o" id="trash" aria-hidden="true" matTooltip="Delete"></i>
           </div>

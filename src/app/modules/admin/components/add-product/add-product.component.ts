@@ -32,7 +32,6 @@ import Swal from 'sweetalert2';
 
 export class AddProductComponent implements OnInit {
 
-  // form!: FormGroup; 
   x:any;
   xx:any;
   a:any;

@@ -29,6 +29,7 @@ import {  MatSelectModule } from '@angular/material/select';
 import { ErrorCompComponent } from './components/error-comp/error-comp.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ViewProductComponent } from './components/view-product/view-product.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ViewProductComponent } from './components/view-product/view-product.com
     MatDialogModule,
     MatListModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ]
 })
 export class AdminModule { }

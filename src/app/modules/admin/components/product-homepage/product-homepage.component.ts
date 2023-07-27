@@ -70,15 +70,15 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
     });
   }
 
-  editProduct(id:any){
-      // const dialogRef = this.matDialog.open(EditProductComponent,
-      //   {
-      //     data:{id}
-      //   });
-      // dialogRef.afterClosed().subscribe(res=>{
-      //   // console.log(res.data);
-      // });
-      this.router.navigate(['admin/edit-product',id]);
+  editProduct(id:any)
+  {
+      const dialog = this.matDialog.open(EditProductComponent, 
+        {
+            data : { id }
+        });
+
+        dialog.afterClosed().subscribe(res => {     
+        });
   }
 
   noDataAddNavigate(){

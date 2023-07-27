@@ -1,1 +1,23 @@
+<mat-card>
+    
+    <mat-card-title>Edit Product</mat-card-title>
 
+    <mat-card-content>
+
+        <form class="example-form" [formGroup]="updateForm" (ngSubmit)="updateFormSubmit()">
+            
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Token</mat-label>
+                <input matInput placeholder="Enter Valid Token" formControlName="token">
+                <span class="form-text text-danger"
+                    *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)"></span>
+            </mat-form-field>
+
+            
+
+            <button type="submit" color="primary" mat-raised-button>Submit</button>
+        </form>
+
+    </mat-card-content>
+
+</mat-card>
