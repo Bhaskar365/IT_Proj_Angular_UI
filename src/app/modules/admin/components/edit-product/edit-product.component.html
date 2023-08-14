@@ -1,21 +1,150 @@
 <mat-card>
-    
     <mat-card-title>Edit Product</mat-card-title>
 
     <mat-card-content>
-
         <form class="example-form" [formGroup]="updateForm" (ngSubmit)="updateFormSubmit()">
-            
+
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Token</mat-label>
-                <input matInput placeholder="Enter Valid Token" formControlName="token">
-                <span class="form-text text-danger"
-                    *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)"></span>
+                <input id="input" matInput placeholder="Enter Valid Token" formControlName="token">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)">Token Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline" disabled>
+                <mat-label>Dev ID</mat-label>
+                <!-- <input id="input" [readonly]="!this.updateForm.value.DevId" matInput placeholder="Enter Dev ID" formControlName="DevId">   -->
+                <input id="input" matInput placeholder="Enter Dev ID" formControlName="DevId">
             </mat-form-field>
 
-            
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Dev Type</mat-label>
+                <input id="input" matInput placeholder="Enter Dev Type" formControlName="DevType">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="DevType_Func?.errors?.['required'] && (DevType_Func?.touched || DevType_Func?.dirty)">DevType Required</span>
 
-            <button type="submit" color="primary" mat-raised-button>Submit</button>
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Dev Type Other</mat-label>
+                <input id="input" matInput placeholder="Enter Dev Type Other" formControlName="DevTypeOther">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="DevTypeOther_Func?.errors?.['required'] && (DevTypeOther_Func?.touched || DevTypeOther_Func?.dirty)">DevTypeOther Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Make</mat-label>
+                <input id="input" matInput placeholder="Enter Make" formControlName="Make">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Make_Func?.errors?.['required'] && (Make_Func?.touched || Make_Func?.dirty)">Make Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Model</mat-label>
+                <input id="input" matInput placeholder="Enter Model" formControlName="Model">  
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Model_Func?.errors?.['required'] && (Model_Func?.touched || Model_Func?.dirty)">Model Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Owner</mat-label>
+                <input id="input" matInput placeholder="Enter Owner" formControlName="Owner">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Owner_Func?.errors?.['required'] && (Owner_Func?.touched || Owner_Func?.dirty)">Owner Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Location</mat-label>
+                <input id="input" matInput placeholder="Enter Location" formControlName="Location">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Location_Func?.errors?.['required'] && (Location_Func?.touched || Location_Func?.dirty)">Location Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Serial</mat-label>
+                <input id="input" matInput placeholder="Enter Serial" formControlName="Serial">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)">Serial Required</span>
+
+            <!---Purchase date----->
+            <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
+                <mat-label id="pDate">Purchase Date</mat-label>
+                <input [value]="this.updateForm.controls.PurchaseDate" matInput formControlName="PurchaseDate" [matDatepicker]="picker"
+                    (dateInput)="dateChange1(picker)" [(ngModel)]="modifiedDate1">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>
+
+            <!---Warranty date----->
+            <mat-form-field class="example-full-width" appearance="outline" id="warrDate">
+                <mat-label id="wexDate">Warranty Exp. Date</mat-label>
+                <input matInput formControlName="WarrantyExpDate" [matDatepicker]="picker2"
+                    (dateInput)="dateChange2(picker2)" [(ngModel)]="modifiedDate2">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="WarrantyExpDate_Func?.errors?.['required'] && (WarrantyExpDate_Func?.touched || WarrantyExpDate_Func?.dirty)">Warranty Ex. Date Required</span>
+
+            <!---Service date----->
+            <mat-form-field class="example-full-width" appearance="outline" id="servDate">
+                <mat-label id="servexDate">Service Exp. Date</mat-label>
+                <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3"
+                    (dateInput)="dateChange3(picker3)" [(ngModel)]="modifiedDate3">
+                <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="ServiceExpDate_Func?.errors?.['required'] && (ServiceExpDate_Func?.touched || ServiceExpDate_Func?.dirty)">Serv. Ex. Date Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Value</mat-label>
+                <input id="input" matInput placeholder="Enter Value" formControlName="Value">
+                <span class="form-text text-danger"
+                    *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)"></span>
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)">Value Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Size</mat-label>
+                <input id="input" matInput placeholder="Enter Size" formControlName="Size">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)">Size Required</span>    
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Toner</mat-label>
+                <input id="input" matInput placeholder="Enter Toner" formControlName="Toner">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)">Toner Required</span>
+            
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>MacAddress</mat-label>
+                <input id="input" matInput placeholder="Enter MacAddress" formControlName="MacAddress">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)">MAC Add Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>IPAddress</mat-label>
+                <input id="input" matInput placeholder="Enter IPAddress" formControlName="IPAddress">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)">IP Add Required</span>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>CellNumber</mat-label>
+                <input id="input" matInput placeholder="Enter CellNumber" formControlName="CellNumber">
+            </mat-form-field>
+            <span class="form-text text-danger"
+                *ngIf="CellNumber_Func?.errors?.['required'] && (CellNumber_Func?.touched || CellNumber_Func?.dirty)">Cell No. Required</span>
+
+            <button type="submit" color="primary" mat-raised-button (click)="updateFormSubmit()">Submit</button>
+            <button type="button" color="warn" mat-raised-button (click)="closeDialog()">Close</button>
         </form>
 
     </mat-card-content>

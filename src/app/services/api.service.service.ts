@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable, Subject, catchError,map } from 'rxjs';
-import { AddDataInterface } from '../modules/admin/components/models/userModel';
+import { AddDataInterface, updateDataInterface } from '../modules/admin/components/models/userModel';
 
 interface Device_Data {
   data : string;
@@ -22,10 +22,12 @@ export class ApiServiceService
 
   //////////////////INVENTORY API////////////////////////////
 
-  getAllDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
-  addDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
+  getAllDataUrl =   "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
+     addDataUrl =   "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
   getUserDataById = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Get";
-  
+  updateDeviceURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Upd";
+  deleteDeviceURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Del";
+
   getAllDataFunc()
   {
     return this.http.post<any>(`${this.getAllDataUrl}`,
@@ -46,7 +48,7 @@ export class ApiServiceService
       })));
   }
 
-  public getDataById(id:any){
+   getDataById(id:any){
       return this.http.post<any>(`${this.getDataById}`,
       { token:"A12F7A58-842D-4111-A44D-5F8C4E1AA521", DevId: id}
       ).pipe(catchError((err)=>{
@@ -56,6 +58,25 @@ export class ApiServiceService
         console.log(res);
         return res.data;
       }));
+  }
+
+  updateDataFunc(updateData:any)
+  {
+    return this.http.post<any>(`${this.updateDeviceURL}`,updateData).pipe(catchError((err)=>{
+      return err;
+    }),map((res:any)=>{
+      console.log(res);
+      return res;
+    }))
+  }
+
+  deleteDataFunc(id:any)
+  {
+      return this.http.post<any>(`${this.deleteDeviceURL}`,id).pipe(catchError((err)=>{
+        return err;
+      }),map((res:any)=>{
+        return res;
+      }))
   }
 
   /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS STARTS---///////////////

@@ -1,8 +1,10 @@
-mat-card{
-    width:170px;
+mat-card {
+    width: 230px;
+    height: 398px;
+    box-shadow: none;
 }
 
-mat-card-title{
+mat-card-title {
     color: white;
     background-color: #051d92;
     font-size: xx-small;
@@ -15,6 +17,323 @@ mat-card-title{
     position: relative;
 }
 
-mat-form-field{
+mat-form-field {
     width: 100%;
+    padding: 2px 0px 0px 0px;
+    display: block;
+    position: relative;
+    top: 7px;
+    margin-bottom: -10px;
+}
+
+button {
+    margin-top: 10px;
+    margin-right: 5px;
+    width: 47%;
+}
+
+span {
+    font-size: 12px;
+    margin-left: 9px;
+    font-weight: 500;
+}
+
+@media screen and (min-width:380px) {
+
+    mat-card {
+        width: 266px;
+        height: 388px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 12px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 47%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:450px) {
+
+    mat-card {
+        width: 308px;
+        height: 390px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 13px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:530px) {
+
+    mat-card {
+        width: 335px;
+        height: 385px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 15px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:600px) {
+
+    mat-card {
+        width: 370px;
+        height: 380px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 15px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:750px) {
+
+    mat-card {
+        width: 410px;
+        height: 377px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 15px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:850px) {
+
+    mat-card {
+        width: 458px;
+        height: 377px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 18px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+    }
+
+    mat-form-field {
+        width: 100%;
+        padding: 2px 0px 0px 0px;
+        display: block;
+        position: relative;
+        top: 7px;
+        margin-bottom: -10px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        margin-left: 9px;
+    }
+}
+
+@media screen and (min-width:1150px) {
+
+    mat-card {
+        width: 676px;
+        height: 487px;
+        box-shadow: none;
+    }
+
+    mat-card-title {
+        color: white;
+        background-color: #051d92;
+        font-size: 18px;
+        text-align: center;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: block;
+        position: relative;
+        padding: 6px;
+    }
+
+    mat-form-field {
+        width: 48%;
+        padding: 2px 0px 0px 0px;
+        display: inline-block;
+        position: relative;
+        top: 11px;
+        margin-bottom: -10px;
+        margin-top: 2px;
+        margin-left: 5px;
+    }
+
+    button {
+        margin-top: 10px;
+        margin-right: 5px;
+        width: 48%;
+    }
+
+    span {
+        font-size: 12px;
+        position: absolute;
+        margin-top: 75px;
+        margin-left: -286px;
+    }
+
 }

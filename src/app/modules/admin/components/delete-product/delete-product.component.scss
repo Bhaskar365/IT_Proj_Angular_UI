@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 2px;
+    margin-left: 2px;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    padding-top: 9px;
+    background-color: #0e3880;
+}
+
+h2>p {
+    color: white;
+    font-size: 14px;
+}
+
+mat-dialog-content {
+    div {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
+    div>p {
+        margin-top: 4px;
+        font-family: cursive;
+        font-size: 11px;
+    }
+}
+
+mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 8px;
+}
+
+@media screen and (min-width:780px) {
+
+    h2>p {
+        color: white;
+        font-size: 15px;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:940px) {
+
+    body {
+        width: 383px;
+        height: 291px;
+    }
+}
+
+@media screen and (min-width:1140px) 
+{
+    body {
+        width: 453px;
+        height: 320px;
+    }
+
+    h2 > p {
+        color: white;
+        font-size: 17px;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
+        font-size: 13px;
+    }
+
+    mat-dialog-content div > p {
+        margin-top: 4px;
+        font-family: cursive;
+        font-size: 14px;
+    }
+
+    mat-dialog-actions {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 8px;
+        margin-top: 23px;
+        margin-right: 3px;
+    }
+}

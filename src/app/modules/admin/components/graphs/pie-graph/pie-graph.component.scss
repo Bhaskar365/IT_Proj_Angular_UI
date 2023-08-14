@@ -1,0 +1,1687 @@
+form {
+    display: grid;
+    border: 1px solid gray;
+    margin-top: 6px;
+    margin-left: 4px;
+    padding: 4px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+#fromDiv {
+    font-size: 11px;
+    margin-top: 8px;
+    margin-left: 12px;
+}
+
+#fromDiv>input {
+    width: 63%;
+    margin-bottom: 3px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
+
+#toDiv {
+    font-size: 11px;
+    margin-left: 12px;
+    margin-top: 2px;
+}
+
+#toDiv>input {
+    width: 63%;
+    margin-top: 2px;
+    margin-left: 22px;
+}
+
+.form-text {
+    font-size: 10px;
+    font-weight: 500;
+    margin-left: 47px;
+    margin-top: 7px;
+}
+
+#myChart1 {
+    width: 274px !important;
+    margin-top: 0px;
+    height: 298px !important;
+    margin-left: 8px;
+}
+
+#submitBtn {
+    font-size: x-small;
+    margin-top: -10px;
+}
+
+mat-card {
+    width: 94%;
+    height: 25px;
+    margin-top: 7px;
+    margin-left: 5px;
+    margin-right: 11px !important;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 1px 1px 2px 1px gray;
+    color: #1200ff;
+    font-size: 12px;
+}
+
+#secondChart {
+    display: block;
+}
+
+#myChart2Canvas {
+    height: 259px !important;
+    width: 278px !important;
+    margin-top: 20px;
+}
+
+#resetMat {
+    width: 68%;
+    margin-top: 1rem;
+    height: 47px;
+    font-size: 9px;
+    margin-left: 46px;
+    text-align: center;
+    display: inline-block;
+}
+
+#resetMat>strong {
+    top: 5px !important;
+    position: relative;
+    font-weight: 500;
+}
+
+
+#resetMat>#resetBtn {
+    margin-left: 6px;
+    margin-top: 8px;
+    width: 54px !important;
+    height: 29px;
+}
+
+@media screen and (min-width:350px) {
+
+    #myChart1 {
+        width: 310px !important;
+        margin-top: -1px;
+        height: 302px !important;
+        margin-left: 31px;
+    }
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart2Canvas {
+        height: 319px !important;
+        width: 312px !important;
+        margin-top: 24px;
+        margin-left: 18px;
+    }
+
+    #resetMat {
+        width: 68%;
+        margin-top: 1rem;
+        height: 47px;
+        font-size: 9px;
+        margin-left: 46px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    #resetMat>strong {
+        top: 5px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 8px;
+        width: 54px !important;
+        height: 29px;
+    }
+
+}
+
+@media screen and (min-width:400px) {
+
+    #myChart1 {
+        width: 321px !important;
+        height: 293px !important;
+        margin-top: 0px;
+        margin-left: 44px;
+    }
+
+    #secondChart {
+
+        display: block;
+    }
+
+    #myChart2Canvas {
+        height: 320px !important;
+        width: 358px !important;
+        margin-top: 20px;
+    }
+
+    #resetMat {
+        margin-left: 71px;
+    }
+
+    #resetMat>strong {
+        top: 5px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 8px;
+        width: 54px !important;
+        height: 29px;
+    }
+
+    form {
+        display: grid;
+        border: 1px solid gray;
+        margin-top: 6px;
+        margin-left: 4px;
+        padding: 4px;
+        margin-right: 10px;
+        border-radius: 6px;
+    }
+
+    #fromDiv {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+    #fromDiv>input {
+        width: 70%;
+        margin-bottom: 7px;
+        margin-top: 6px;
+        margin-left: 7px;
+        padding: 3px;
+    }
+
+    #toDiv {
+        font-size: 12px;
+        margin-left: 4px;
+    }
+
+    #toDiv>input {
+        width: 70%;
+        margin-top: 2px;
+        margin-left: 22px;
+        padding: 3px;
+    }
+
+    .form-text {
+        margin-bottom: 6px;
+        font-weight: 500;
+        margin-left: 40px;
+    }
+
+    #submitBtn {
+        font-size: 12px;
+        margin-top: -10px;
+    }
+
+    mat-card {
+        width: 94%;
+        margin-top: 7px;
+        margin-left: 7px;
+        margin-right: 11px !important;
+        padding: 0px 0px 0px 4px;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        font-size: 13px;
+    }
+}
+
+@media screen and (min-width:490px) {
+
+    #myChart1 {
+        width: 323px !important;
+        height: 285px !important;
+        margin-top: 0px;
+        margin-left: 78px;
+    }
+
+    #secondChart {
+
+        display: block;
+    }
+
+    #myChart2Canvas {
+        height: 311px !important;
+        width: 374px !important;
+        margin-top: 20px;
+        margin-left: 69px;
+    }
+
+    #resetMat {
+        margin-left: 129px;
+        width: 48%
+    }
+
+    #resetMat>strong {
+        top: 5px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 8px;
+        width: 54px !important;
+        height: 29px;
+    }
+
+}
+
+@media screen and (min-width:550px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 352px !important;
+        height: 280px !important;
+        margin-top: -2px;
+        margin-left: 84px;
+    }
+
+    #myChart2Canvas {
+        height: 343px !important;
+        width: 431px !important;
+        margin-top: 10px;
+    }
+
+    #resetMat {
+        margin-left: 174px;
+        width: 219px;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 2px;
+        width: 54px !important;
+        height: 22px;
+    }
+
+    form {
+        display: grid;
+        border: 1px solid gray;
+        margin-top: 6px;
+        margin-left: 5px;
+        padding: 8px;
+        margin-right: 11px;
+        border-radius: 6px;
+    }
+
+    #fromDiv {
+        font-size: 13px;
+        margin-left: 4px;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 6px;
+        margin-left: 7px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 13px;
+        margin-left: 4px;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 2px;
+        margin-left: 22px;
+        padding: 5px;
+    }
+
+    .form-text {
+        margin-bottom: 6px;
+        font-weight: 500;
+        margin-left: 43px;
+        font-size: 11px;
+    }
+
+    #submitBtn {
+        font-size: 14px;
+        margin-top: -10px;
+    }
+
+    mat-card {
+        width: 96%;
+        margin-top: 7px;
+        margin-left: 7px;
+        margin-right: 11px !important;
+        padding: 6px 0px 3px 4px;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width:630px) and (max-width:699.9px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 417px !important;
+        height: 357px !important;
+        margin-top: 2px;
+        margin-left: 102px;
+    }
+
+    #myChart2Canvas {
+        height: 348px !important;
+        width: 449px !important;
+        margin-top: 0px;
+        margin-left: 94px;
+    }
+
+    #resetMat {
+        margin-left: 228px;
+        width: 219px !important;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 2px;
+        width: 54px !important;
+        height: 22px;
+    }
+
+    #fromDiv {
+        font-size: 13px;
+        margin-left: -1px;
+        text-align: center;
+        margin-top: 18px;
+    }
+
+    #toDiv {
+        font-size: 13px;
+        margin-left: 3px;
+        margin-top: 22px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 2px;
+        margin-left: 11px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    mat-card {
+        width: 23.5% !important;
+        display: flex;
+        justify-content: center;
+        height: 49px;
+        font-size: 9px;
+        margin-top: 17px;
+        margin-bottom: 11px;
+        margin-left: 5px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 8px;
+        margin-left: 8px;
+        padding: 0px;
+        margin-right: 9px;
+        border-radius: 6px;
+        height: 92px;
+    }
+
+    #submitBtn {
+        font-size: 16px;
+        margin-left: 4px;
+        margin-top: 21px;
+        margin-right: 8px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 62px;
+        font-size: 10px;
+        font-family: cursive;
+        font-weight: 600;
+        left: 148px;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 19rem !important;
+        margin-top: 63px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width:699.9px) and (max-width:800px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 382px !important;
+        height: 352px !important;
+        margin-top: 7px;
+        margin-left: 145px;
+    }
+
+    #myChart2Canvas {
+        height: 376px !important;
+        width: 394px !important;
+        margin-top: 12px;
+        margin-left: 171px;  
+    }
+
+    #resetMat {
+        margin-left: 248px;
+        width: 225px !important;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 2px;
+        width: 54px !important;
+        height: 22px;
+    }
+
+
+    #fromDiv {
+        font-size: 14px;
+        margin-left: 0px;
+        text-align: center;
+        margin-top: 17px;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 9px;
+        margin-left: 4px;
+        margin-right: 7px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 15px;
+        margin-left: -9px;
+        margin-top: 23px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 2px;
+        margin-left: 6px;
+        padding: 5px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+
+    mat-card {
+        width: 25.5% !important;
+        display: flex;
+        justify-content: center;
+        height: 53px;
+        font-size: 11px;
+        margin-top: 17px;
+        margin-bottom: 11px;
+        margin-left: 5px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 6px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 95px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 10px;
+        margin-top: 25px;
+        margin-right: 6px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 69px;
+        font-size: 11px;
+        font-family: cursive;
+        font-weight: 500;
+        left: 170px;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 20.3rem !important;
+        margin-top: 69px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:800px) and (max-width:920px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 447px !important;
+        height: 373px !important;
+        margin-top: -3px;
+        margin-left: 178px;
+    }
+
+    #myChart2Canvas {
+        height: 353px !important;
+        width: 368px !important;
+        margin-top: 9px;
+        margin-left: 231px;
+    }
+
+    #resetMat {
+        margin-left: 307px;
+        width: 225px !important;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 6px;
+        margin-top: 2px;
+        width: 54px !important;
+        height: 22px;
+    }
+
+    #fromDiv {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 19px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 9px;
+        margin-left: 4px;
+        margin-right: 7px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 15px;
+        margin-left: -8px;
+        margin-top: 23px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 4px;
+        margin-left: 8px;
+        padding: 5px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    mat-card {
+        width: 26.5% !important;
+        display: flex;
+        justify-content: center;
+        height: 53px;
+        font-size: 11px;
+        margin-top: 19px;
+        margin-bottom: 11px;
+        margin-left: 5px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 4px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 15px;
+        margin-top: 27px;
+        margin-right: 6px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 74px;
+        font-size: 11px;
+        font-family: cursive;
+        font-weight: 500;
+        left: 176px;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 21.1rem !important;
+        margin-top: 73px;
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width:920px) and (max-width:1020px) {
+
+    #secondChart {
+        display: block;
+    }
+    
+    #myChart1 {
+        width: 468px !important;
+        height: 465px !important;
+        margin-top: 17px;
+        margin-left: 247px;
+    }
+
+    #myChart2Canvas {
+        height: 407px !important;
+        width: 426px !important;
+        margin-top: 10px;
+        margin-left: 259px;
+    }
+
+    #resetMat {
+        margin-left: 342px;
+        width: 260px !important;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 5px;
+        margin-top: 1px;
+        width: 77px !important;
+        height: 23px;
+    }
+
+
+    #fromDiv {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 21px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 10px;
+        margin-left: 4px;
+        margin-right: 7px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 16px;
+        margin-left: -11px;
+        margin-top: 24px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 5px;
+        margin-left: 8px;
+        padding: 5px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    mat-card {
+        width: 30% !important;
+        display: flex;
+        justify-content: center;
+        font-size: 13px;
+        height: 59px;
+        margin-top: 17px;
+        margin-bottom: 11px;
+        margin-left: 8px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 4px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 32px;
+        margin-top: 30px;
+        margin-right: 6px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 72px;
+        font-size: 12px;
+        left: 209px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 372px !important;
+        margin-top: 73px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1020px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 545px !important;
+        height: 480px !important;
+        margin-top: 14px;
+        margin-left: 230px;
+    }
+
+    #myChart2Canvas {
+        height: 440px !important;
+        width: 462px !important;
+        margin-top: 12px;
+        margin-left: 307px;
+    }
+
+    #resetMat {
+        margin-left: 383px;
+        width: 300px !important;
+        height: 38px;
+    }
+
+    #resetMat>strong {
+        top: 2px !important;
+        position: relative;
+        font-weight: 500;
+        font-size: 12px;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 5px;
+        margin-top: 1px;
+        width: 77px !important;
+        height: 23px;
+    }
+
+    #fromDiv {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 21px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 10px;
+        margin-left: 4px;
+        margin-right: 7px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 16px;
+        margin-left: -11px;
+        margin-top: 24px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 5px;
+        margin-left: 8px;
+        padding: 5px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    mat-card {
+        width: 30% !important;
+        display: flex;
+        justify-content: center;
+        font-size: 13px;
+        height: 59px;
+        margin-top: 17px;
+        margin-bottom: 11px;
+        margin-left: 8px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 4px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 32px;
+        margin-top: 32px;
+        margin-right: 6px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 73px;
+        font-size: 12px;
+        left: 210px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 372px !important;
+        margin-top: 73px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1100px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 545px !important;
+        height: 480px !important;
+        margin-top: 14px;
+        margin-left: 300px;
+    }
+
+    #myChart2Canvas {
+        height: 508px !important;
+        width: 592px !important;
+        margin-top: 20px;
+        margin-left: 297px;
+    }
+
+    #resetMat {
+        margin-left: 437px;
+        width: 346px !important;
+        height: 51px;
+    }
+
+    #resetMat>strong {
+        top: 4px !important;
+        position: relative;
+        font-weight: 500;
+        font-size: 15px;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 5px;
+        margin-top: 4px;
+        width: 89px !important;
+        height: 30px;
+    }
+
+    #fromDiv {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 21px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 9px;
+        margin-left: 4px;
+        margin-right: 7px;
+        font-size: 15px;
+        padding: 6px;
+    }
+
+    #toDiv {
+        font-size: 16px;
+        margin-left: -11px;
+        margin-top: 25px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 4px;
+        margin-left: 8px;
+        padding: 6px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 90vh;
+    }
+
+    mat-card {
+        width: 33% !important;
+        font-size: 15px;
+        margin-top: 16px;
+        margin-bottom: 11px;
+        margin-left: 7px;
+        margin-right: 6px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 8px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 16px;
+        margin-top: 28px;
+        margin-right: 6px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 72px;
+        font-size: 12px;
+        left: 236px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 406px !important;
+        margin-top: 73px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1180px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart2Canvas {
+        width: 495px !important;
+        height: 497px !important;
+        margin-top: 24px;
+        margin-left: 421px;
+    }
+
+    #myChart1 {
+        width: 459px !important;
+        height: 445px !important;
+        margin-top: 22px;
+        margin-left: 427px;
+    }
+
+    #resetMat {
+        margin-left: 474px;
+        width: 344px !important;
+        height: 49px;
+    }
+
+    #resetMat>strong {
+        top: 4px !important;
+        position: relative;
+        font-weight: 400;
+        font-size: 17px;
+    }
+
+
+    #resetMat>#resetBtn {
+        margin-left: 5px;
+        margin-top: 4px;
+        width: 89px !important;
+        height: 30px;
+    }
+
+    #fromDiv {
+        font-size: 14px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 21px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 9px;
+        margin-left: 4px;
+        margin-right: 7px;
+        font-size: 15px;
+        padding: 6px;
+    }
+
+    #toDiv {
+        font-size: 16px;
+        margin-left: -11px;
+        margin-top: 25px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 74%;
+        margin-top: 4px;
+        margin-left: 8px;
+        padding: 6px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    mat-card {
+        width: 33% !important;
+        font-size: 14px;
+        margin-top: 16px;
+        margin-bottom: 11px;
+        margin-left: 7px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 8px;
+        margin-left: 4px;
+        padding: 2px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 11px;
+        margin-top: 30px;
+        margin-right: 9px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 231px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 398px !important;
+        margin-top: 71px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1300px) {
+
+    #secondChart {
+        display: block;
+    }
+
+    #myChart1 {
+        width: 495px !important;
+        height: 454px !important;
+        margin-top: 24px;
+        margin-left: 479px;
+    }
+
+    #myChart2Canvas {
+        width: 575px !important;
+        height: 494px !important;
+        margin-top: 17px;
+        margin-left: 463px;
+    }
+
+    #resetMat {
+        margin-left: 573px;
+        width: 367px !important;
+        height: 50px;
+    }
+
+    #resetMat>strong {
+        top: 5px !important;
+        position: relative;
+        font-weight: 400;
+        font-size: 19px;
+    }
+
+    #resetMat>#resetBtn {
+        margin-left: 5px;
+        margin-top: 4px;
+        width: 89px !important;
+        height: 30px;
+    }
+
+    #fromDiv {
+        font-size: 16px !important;
+        margin-left: 0px !important;
+        text-align: center !important;
+        margin-top: 21px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 9px;
+        margin-left: 4px;
+        margin-right: 7px;
+        font-size: 15px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 16px;
+        margin-left: -11px;
+        margin-top: 25px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #toDiv>input {
+        width: 75%;
+        margin-top: 3px;
+        margin-left: 8px;
+        padding: 5px;
+    }
+
+    input {
+        cursor: pointer;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    mat-card {
+        width: 36% !important;
+        font-size: 18px;
+        margin-top: 16px;
+        margin-bottom: 11px;
+        margin-left: 7px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    form {
+        display: inline-flex;
+        border: 1px solid gray;
+        margin-top: 8px;
+        margin-left: 4px;
+        padding: 3px;
+        margin-right: 10px;
+        border-radius: 6px;
+        height: 102px;
+        width: 58%;
+    }
+
+    #submitBtn {
+        font-size: 17px;
+        margin-left: 14px;
+        margin-top: 29px;
+        margin-right: 9px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 297px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 471px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1331px) {
+
+    #myChart1 {
+        width: 546px !important;
+        height: 483px !important;
+        margin-top: 24px;
+        margin-left: 462px;
+    }
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 302px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 478px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1380px) {
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 312px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 489px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1400px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 319px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 493px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1437px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 327px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 502px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1470px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 334px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 509px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1500px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 334px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 509px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1515px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 342px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 517px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1540px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 348px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 523px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1570px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 70px;
+        font-size: 12px;
+        left: 355px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 530px !important;
+        margin-top: 70px;
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width:1600px) {
+
+    .form-text {
+        position: absolute;
+        margin-top: 72px;
+        font-size: 12px;
+        left: 381px;
+        font-family: cursive;
+        font-weight: 500;
+    }
+
+    .secondErr {
+        position: absolute;
+        display: flex;
+        left: 610px !important;
+        margin-top: 72px;
+        font-size: 12px;
+    }
+
+    form {
+        width: 58%;
+        margin-top: 13px;
+        margin-left: 14px;
+    }
+
+    mat-card {
+        width: 36% !important;
+        font-size: 21px;
+        margin-top: 16px;
+        margin-bottom: 11px;
+        margin-left: 7px;
+        margin-right: 7px !important;
+        text-align: center;
+        box-shadow: 1px 1px 2px 1px gray;
+        color: #1200ff;
+        cursor: default;
+    }
+
+    #fromDiv {
+        font-size: 19px !important;
+        margin-left: 1px !important;
+        width: 27%;
+        text-align: center !important;
+        margin-top: 20px !important;
+        margin-right: 4px !important;
+    }
+
+    #fromDiv>input {
+        width: 74%;
+        margin-bottom: 7px;
+        margin-top: 7px;
+        margin-left: 4px;
+        margin-right: 7px;
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    #toDiv {
+        font-size: 18px;
+        margin-left: -13px;
+        margin-top: 22px;
+        margin-right: -14px;
+        text-align: center;
+    }
+
+    #submitBtn {
+        font-size: 23px;
+        margin-left: 17px;
+        margin-top: 26px;
+        margin-right: 9px;
+        height: 40px;
+    }
+
+}

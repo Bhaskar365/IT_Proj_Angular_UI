@@ -53,7 +53,8 @@
             <i class="fa fa-pencil" id="pencil" 
               aria-hidden="true" (click)="editProduct(row)" matTooltip="Edit"></i>
               
-            <i class="fa fa-trash-o" id="trash" aria-hidden="true" matTooltip="Delete"></i>
+            <i class="fa fa-trash-o" id="trash" 
+              aria-hidden="true" matTooltip="Delete" (click)="deleteProduct(row)"></i>
           </div>
         </td>
       </ng-container>

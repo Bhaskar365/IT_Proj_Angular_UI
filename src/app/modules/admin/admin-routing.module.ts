@@ -5,8 +5,8 @@ import { EditProductComponent } from './components/edit-product/edit-product.com
 import { HeaderComponent } from './components/header/header.component';
 import { ProductDashboardComponent } from './components/product-dashboard/product-dashboard.component';
 import { ProductHomepageComponent } from './components/product-homepage/product-homepage.component';
-import { BarGraphComponent } from './components/bar-graph/bar-graph.component';
-import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
+import { BarGraphComponent } from './components/graphs/bar-graph/bar-graph.component';
+import { PieGraphComponent } from './components/graphs/pie-graph/pie-graph.component';
 import { ErrorCompComponent } from './components/error-comp/error-comp.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 const routes: Routes = [
@@ -14,8 +14,8 @@ const routes: Routes = [
     children:[
       { path: 'product-homepage', component: ProductHomepageComponent },
       { path: 'product-dashboard', component: ProductDashboardComponent },
-      { path: 'bar-graph', component: BarGraphComponent },
-      { path: 'pie-graph', component: PieGraphComponent },
+      { path: 'graphs/bar-graph', component: BarGraphComponent },
+      { path: 'graphs/pie-graph', component: PieGraphComponent },
       { path: 'add-product', component: AddProductComponent },
       { path: 'edit-product/:userId', component: EditProductComponent },
       { path: 'view-product', component:ViewProductComponent },

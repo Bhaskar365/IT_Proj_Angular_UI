@@ -21,8 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { BarGraphComponent } from './components/bar-graph/bar-graph.component';
-import { PieGraphComponent } from './components/pie-graph/pie-graph.component';
+import { BarGraphComponent } from './components/graphs/bar-graph/bar-graph.component';
+import { PieGraphComponent } from './components/graphs/pie-graph/pie-graph.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import {  MatSelectModule } from '@angular/material/select';
@@ -30,6 +30,7 @@ import { ErrorCompComponent } from './components/error-comp/error-comp.component
 import { MatDialogModule } from '@angular/material/dialog';
 import { ViewProductComponent } from './components/view-product/view-product.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { DeleteProductComponent } from './components/delete-product/delete-product.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     PieGraphComponent,
     ErrorCompComponent,
     ViewProductComponent,
+    DeleteProductComponent,
   ],
   imports: [
     CommonModule,

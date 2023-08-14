@@ -1,0 +1,27 @@
+<body>
+    <h2 mat-dialog-title>
+        <p>Delete Notification</p>
+    </h2>
+    
+    <mat-dialog-content>
+        <div>Do you want to delete the product with the following -
+            <p>
+                ID : <strong>{{this.tableData.DevId}}</strong>
+                <br/>
+                Device Type : <strong>{{this.tableData.DevType}}</strong>
+                <br/>
+                Owner: <strong>{{this.tableData.Owner}}</strong>
+            </p>
+            <p [formGroup]="tokenInput">
+                Token : <input formControlName="token"/>
+                <span class="form-text text-danger"
+                    *ngIf="tokenInput.get('token')?.hasError('required')">Enter valid token</span>
+            </p>
+        </div>
+    </mat-dialog-content>
+    
+    <mat-dialog-actions>
+        <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="warn" [disabled]="tokenInput.invalid" (click)="deleteDevice(this.tableData.DevId)">Delete</button>
+    </mat-dialog-actions>
+</body>

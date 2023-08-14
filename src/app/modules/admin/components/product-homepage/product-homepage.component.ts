@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ViewProductComponent } from '../view-product/view-product.component';
+import { DeleteProductComponent } from '../delete-product/delete-product.component';
 
 export interface UserData {
   DevId:number;
@@ -79,6 +80,17 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
 
         dialog.afterClosed().subscribe(res => {     
         });
+  }
+
+  deleteProduct(id:any)
+  {
+      const dialog = this.matDialog.open(DeleteProductComponent,
+        {
+            data : { id }
+        });
+
+        dialog.afterClosed().subscribe(res => {  }
+      );
   }
 
   noDataAddNavigate(){

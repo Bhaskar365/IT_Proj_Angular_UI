@@ -1,0 +1,38 @@
+<body>
+  <span [hidden]="disabl">
+    <form [formGroup]="chartFrom" (ngSubmit)="updateData()">
+      <mat-card [hidden]="!disabl1">Select dates to get graph data</mat-card>
+      <div id="fromDiv">
+        <strong>From</strong> <input class="input" formControlName="from" type="date">
+      </div>
+      <span class="form-text text-danger"
+        *ngIf="this.chartFrom.controls.from.touched && this.chartFrom.controls.from.invalid">Date Required From</span>
+
+      <div id="toDiv">
+        <strong>To</strong> <input class="input" formControlName="to" type="date">
+      </div>
+      <span class="form-text text-danger secondErr"
+        *ngIf="this.chartFrom.controls.to.touched && this.chartFrom.controls.to.invalid">Date Required To</span>
+
+      &nbsp;
+      <button type="submit" mat-raised-button color="primary" id="submitBtn"
+        [disabled]="this.chartFrom.invalid">Submit</button>
+    </form>
+  </span>
+
+  <div [hidden]="disabl">
+    <canvas id="myChart1"></canvas>
+  </div>
+
+  <div id="secondChart">
+    <mat-card [hidden]="disabl1" id="resetMat">
+      <strong>Reset page by clicking button</strong>
+      <button type="button" id="resetBtn" mat-raised-button color="warn" (click)="reloadCurrentPage()"
+        [hidden]="disabl1">Reset</button>
+    </mat-card>
+    <canvas id="myChart2Canvas"></canvas>
+  </div>
+
+  <br>
+
+</body>
