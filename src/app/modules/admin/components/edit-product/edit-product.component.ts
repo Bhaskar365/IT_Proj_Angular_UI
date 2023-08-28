@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit, } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef , MAT_DIALOG_DATA} from '@angular/material/dialog';
@@ -17,11 +18,16 @@ export class EditProductComponent implements OnInit {
   modifiedDate1:any;
   modifiedDate2:any;
   modifiedDate3:any;
+  y:any;
+  x:any;
+
+  purchaseBindingDate:any;
+  dateSample:any;
 
   updateForm = new FormGroup({
 
     token: new FormControl('', [Validators.required]),
-    DevId : new FormControl({value:'',disabled:true}, [Validators.required]),
+    DevId : new FormControl('', [Validators.required]),
     DevType : new FormControl('', [Validators.required]),
     DevTypeOther : new FormControl('', [Validators.required]),
     Make : new FormControl('', [Validators.required]),
@@ -43,13 +49,44 @@ export class EditProductComponent implements OnInit {
 
   constructor( private api:ApiServiceService, 
                @Inject(MAT_DIALOG_DATA) public data:any,
-               private matDialog:MatDialogRef<EditProductComponent> 
-             ) { }
+               private matDialog:MatDialogRef<EditProductComponent> ,
+               public datePipe:DatePipe
+               ) { }
 
-    ngOnInit() {
-
+    ngOnInit() 
+    {
       this.updateForm.patchValue(this.data.id);
       this.userData = this.data.id;
+
+      this.purchaseBindingDate = this.updateForm.get('PurchaseDate')?.value;
+      // console.log(this.purchaseBindingDate);
+
+      let y = new Date(this.purchaseBindingDate);
+      // console.log(y);
+
+      this.dateSample = this.datePipe.transform(this.purchaseBindingDate,'YYYY-MM-dd');
+      // console.log(this.dateSample);
+
+      // let z = this.updateForm.get('PurchaseDate')?.setValue(new Date(this.purchaseBindingDate).toISOString().split('T')[0]);
+      let z = this.updateForm.get('PurchaseDate')?.setValue(new Date(this.purchaseBindingDate).toISOString());
+      console.log(z)
+
+      // let x = this.purchaseBindingDate;
+      // console.log(x);
+      // this.purchaseBindingDate = this.updateForm.controls.PurchaseDate.value;
+      // console.log(this.purchaseBindingDate);
+      // this.purchaseBindingDate = this.purchaseBindingDate.value;
+      // console.log(this.purchaseBindingDate);
+      // this.y = new Date(this.purchaseBindingDate);
+      // console.log(this.y);
+      // this.x = moment(this.purchaseBindingDate).format('YYYY-MM-DD')
+      // this.y = new Date(this.purchaseBindingDate.value).toISOString();
+      // console.log(this.y);
+      // this.y = this.datePipe.transform(this.y,'yyyy/MM/dd');
+      // console.log(this.y);
+
+      // this.updateForm.get('PurchaseDate')?.setValue(this.x);
+      // console.log(this.updateForm.get('PurchaseDate')?.value);
     }
 
     //update submit
@@ -64,6 +101,7 @@ export class EditProductComponent implements OnInit {
       });
     }
 
+  
     get Token_Func() {
       return this.updateForm.get('token');
     }
@@ -147,7 +185,6 @@ export class EditProductComponent implements OnInit {
       let zz1 = moment(z1).format('YYYY-MM-DD');
       this.modifiedDate1 = zz1;
       console.log('dateChange1');
-      console.log(this.modifiedDate1);
       return this.modifiedDate1;
     }
   
@@ -158,7 +195,6 @@ export class EditProductComponent implements OnInit {
       let zz2 = moment(z2).format('YYYY-MM-DD');
       this.modifiedDate2 = zz2;
       console.log('dateChange2');
-      console.log(this.modifiedDate2);
       return this.modifiedDate2;
     }
   
@@ -169,7 +205,6 @@ export class EditProductComponent implements OnInit {
       let zz3 = moment(z3).format('YYYY-MM-DD');
       this.modifiedDate3 = zz3;
       console.log('dateChange3');
-      console.log(this.modifiedDate3);
       return this.modifiedDate3;
     }
 

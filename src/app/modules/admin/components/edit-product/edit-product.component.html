@@ -11,10 +11,9 @@
             <span class="form-text text-danger"
                 *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)">Token Required</span>
 
-            <mat-form-field class="example-full-width" appearance="outline" disabled>
+            <mat-form-field class="example-full-width" appearance="outline" id="DevIdInput">
                 <mat-label>Dev ID</mat-label>
-                <!-- <input id="input" [readonly]="!this.updateForm.value.DevId" matInput placeholder="Enter Dev ID" formControlName="DevId">   -->
-                <input id="input" matInput placeholder="Enter Dev ID" formControlName="DevId">
+                <input id="input" matInput placeholder="Enter Dev ID" formControlName="DevId" readonly="DevId" matTooltip="Cannot change">
             </mat-form-field>
 
             <mat-form-field class="example-full-width" appearance="outline">
@@ -69,19 +68,44 @@
             <!---Purchase date----->
             <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
                 <mat-label id="pDate">Purchase Date</mat-label>
-                <input [value]="this.updateForm.controls.PurchaseDate" matInput formControlName="PurchaseDate" [matDatepicker]="picker"
-                    (dateInput)="dateChange1(picker)" [(ngModel)]="modifiedDate1">
+                <input [value]="this.purchaseBindingDate | date"
+                    matInput formControlName="PurchaseDate" 
+                    [matDatepicker]="picker"
+                    (dateInput)="dateChange1(picker)" 
+                    [(ngModel)]="modifiedDate1">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
+
+            <mat-form-field>
+                Selected date:
+                <input matInput [value]="this.purchaseBindingDate | date" />
+              </mat-form-field>
+
             <span class="form-text text-danger"
                 *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>
+
+            <!---Purchase date----->
+                <!-- <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
+                            <mat-label id="pDate">Purchase Date</mat-label>
+                            <input [value]="this.y" 
+                                (dateInput)="dateChange1(picker)" 
+                                formControlName="PurchaseDate"
+                                matInput [matDatepicker]="picker" />
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <span class="form-text text-danger"
+                    *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>     -->
+
 
             <!---Warranty date----->
             <mat-form-field class="example-full-width" appearance="outline" id="warrDate">
                 <mat-label id="wexDate">Warranty Exp. Date</mat-label>
-                <input matInput formControlName="WarrantyExpDate" [matDatepicker]="picker2"
-                    (dateInput)="dateChange2(picker2)" [(ngModel)]="modifiedDate2">
+                <input matInput formControlName="WarrantyExpDate" 
+                    [matDatepicker]="picker2"
+                    (dateInput)="dateChange2(picker2)" 
+                    [(ngModel)]="modifiedDate2">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
@@ -91,8 +115,10 @@
             <!---Service date----->
             <mat-form-field class="example-full-width" appearance="outline" id="servDate">
                 <mat-label id="servexDate">Service Exp. Date</mat-label>
-                <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3"
-                    (dateInput)="dateChange3(picker3)" [(ngModel)]="modifiedDate3">
+                <input matInput formControlName="ServiceExpDate" 
+                    [matDatepicker]="picker3"
+                    (dateInput)="dateChange3(picker3)" 
+                    [(ngModel)]="modifiedDate3">
                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                 <mat-datepicker #picker3></mat-datepicker>
             </mat-form-field>
@@ -127,14 +153,14 @@
                 <input id="input" matInput placeholder="Enter MacAddress" formControlName="MacAddress">
             </mat-form-field>
             <span class="form-text text-danger"
-                *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)">MAC Add Required</span>
+                *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)">MAC Address Required</span>
 
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>IPAddress</mat-label>
                 <input id="input" matInput placeholder="Enter IPAddress" formControlName="IPAddress">
             </mat-form-field>
             <span class="form-text text-danger"
-                *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)">IP Add Required</span>
+                *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)">IP Address Required</span>
 
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>CellNumber</mat-label>

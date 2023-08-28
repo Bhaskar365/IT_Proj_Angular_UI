@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable, Subject, catchError,map } from 'rxjs';
-import { AddDataInterface, updateDataInterface } from '../modules/admin/components/models/userModel';
 
 interface Device_Data {
   data : string;
@@ -39,12 +38,12 @@ export class ApiServiceService
     })));
   }
 
-  addDataFunc(data:AddDataInterface| null | undefined)
+  addDataFunc(data:any)
   {
       return this.http.post<any>(`${this.addDataUrl}`,data).pipe(catchError((err)=>{
         return err;
       }), map(((res:any)=>{
-        return res;
+        return JSON.stringify(res);
       })));
   }
 
@@ -55,7 +54,6 @@ export class ApiServiceService
         return err;
       }),
       map((res:Device_Data)=>{
-        console.log(res);
         return res.data;
       }));
   }
@@ -65,8 +63,8 @@ export class ApiServiceService
     return this.http.post<any>(`${this.updateDeviceURL}`,updateData).pipe(catchError((err)=>{
       return err;
     }),map((res:any)=>{
-      console.log(res);
-      return res;
+      console.log('inside serv class');
+      return JSON.stringify(res);
     }))
   }
 

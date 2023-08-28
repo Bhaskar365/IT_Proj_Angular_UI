@@ -1,7 +1,14 @@
 * {
-    box-sizing: border-box;
     margin: 0;
-    padding: 0;
+}
+
+body {
+    max-height: 286px;
+}
+
+.form-text {
+    font-size: 10px;
+    margin-left: 40px;
 }
 
 h2 {
@@ -11,76 +18,314 @@ h2 {
     margin-bottom: 2px;
     display: flex;
     justify-content: center;
-    padding-top: 9px;
     background-color: #0e3880;
+    height: 34px;
 }
 
 h2>p {
     color: white;
-    font-size: 14px;
+    font-size: 11px;
 }
 
 mat-dialog-content {
     div {
         margin-top: 8px;
-        font-size: 10px;
+        font-size: 8px;
     }
 
     div>p {
         margin-top: 4px;
         font-family: cursive;
-        font-size: 11px;
+        font-size: 9px;
     }
 }
 
 mat-dialog-actions {
     display: flex;
     justify-content: flex-end;
-    padding-right: 8px;
+    padding-right: 12px;
+    margin-top: -13px;
 }
 
-@media screen and (min-width:780px) {
+#cancelBtn {
+    width: 66px;
+    height: auto;
+    padding: 2px 0px 2px 1px;
+    margin-top: -13px;
+    position: fixed;
+    margin-right: 75px;
+}
+
+#submitBtn {
+    width: 66px;
+    height: auto;
+    padding: 2px 0px 2px 1px;
+    margin-top: -13px;
+}
+
+@media screen and (min-width:365px) {
+
+    body {
+        width: 274px;
+    }
+
+    .form-text {
+        font-size: 10px;
+        margin-left: 40px;
+    }
+
+    h2 {
+        margin-top: 2px;
+        margin-left: 2px;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        display: flex;
+        justify-content: center;
+        background-color: #0e3880;
+        height: 34px;
+    }
 
     h2>p {
         color: white;
-        font-size: 15px;
+        font-size: 11px;
+    }
+
+    mat-dialog-content {
+        div {
+            margin-top: 8px;
+            font-size: 8px;
+        }
+
+        div>p {
+            margin-top: 4px;
+            font-family: cursive;
+            font-size: 9px;
+        }
+    }
+
+    #cancelBtn {
+        width: 66px;
+        height: auto;
+        padding: 2px 0px 2px 1px;
+        margin-top: -13px;
+        position: fixed;
+        margin-right: 75px;
+    }
+
+    #submitBtn {
+        width: 66px;
+        height: auto;
+        padding: 2px 0px 2px 1px;
+        margin-top: -13px;
+    }
+}
+
+@media screen and (min-width:415px) {
+
+    body {
+        width: 287px;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
+    #cancelBtn {
+        width: 66px;
+        height: auto;
+        padding: 2px 0px 2px 1px;
+        margin-top: -13px;
+        position: absolute;
+    }
+}
+
+@media screen and (min-width:550px) {
+
+    body {
+        width: auto;
+        max-height: 383px !important;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
+        font-size: 10px;
+    }
+
+    #cancelBtn {
+        width: 100px;
+        height: auto;
+        padding: 2px 0px 2px 1px;
+        margin-top: -13px;
+        position: absolute;
+        right: 45px;
+    }
+
+    #submitBtn {
+        width: 100px;
+        height: auto;
+        padding: 2px 0px 2px 1px;
+        margin-top: -13px;
+    }
+
+    .form-text {
+        font-size: 10px;
+        display: block;
+    }
+
+}
+
+@media screen and (min-width:650px) {
+
+    body {
+        width: auto;
+        max-height: 383px !important;
     }
 
     mat-dialog-content div {
         margin-top: 8px;
         font-size: 11px;
     }
+
+    mat-dialog-content div>p {
+        margin-top: 4px;
+        font-family: cursive;
+        font-size: 10px;
+    }
+
+    #cancelBtn {
+        width: 118px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+        position: absolute;
+        right: 67px;
+    }
+
+    #submitBtn {
+        width: 118px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+    }
+
+    .form-text {
+        font-size: 10px;
+        display: block;
+    }
+}
+
+@media screen and (min-width:780px) {
+
+    body {
+        width: 411px;
+    }
+
+    ;
+
+
+    h2>p {
+        color: white;
+        font-size: 15px;
+    }
+
+    #cancelBtn {
+        width: 135px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+        position: absolute;
+        right: 81px;
+    }
+
+    #submitBtn {
+        width: 135px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+    }
+
+    .form-text {
+        font-size: 11px;
+        display: block;
+        margin-left: 49px;
+    }
+
+    mat-dialog-content div>p {
+        margin-top: 4px;
+        font-family: cursive;
+        font-size: 11px;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
+        font-size: 12px;
+    }
 }
 
 @media screen and (min-width:940px) {
-
-    body {
-        width: 383px;
-        height: 291px;
-    }
-}
-
-@media screen and (min-width:1140px) 
-{
-    body {
-        width: 453px;
-        height: 320px;
-    }
-
-    h2 > p {
-        color: white;
-        font-size: 17px;
-    }
 
     mat-dialog-content div {
         margin-top: 8px;
         font-size: 13px;
     }
 
-    mat-dialog-content div > p {
+    h2>p {
+        padding: 2px;
+        color: white;
+        font-size: 15px;
+    }
+
+    mat-dialog-content div>p {
         margin-top: 4px;
         font-family: cursive;
+        font-size: 12px;
+    }
+
+    .form-text {
+        font-size: 12px;
+        display: block;
+        margin-left: 51px;
+    }
+
+    #cancelBtn {
+        width: 152px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+        position: absolute;
+        right: 97px;
+    }
+
+    #submitBtn {
+        width: 152px;
+        height: auto;
+        padding: 5px 0px 5px 1px;
+        margin-top: -13px;
+    }
+}
+
+@media screen and (min-width:1140px) {
+
+    body {
+        width: 486px;
+        max-height: fit-content !important;
+    }
+
+    h2>p {
+        color: white;
+        font-size: 17px;
+    }
+
+    mat-dialog-content div {
+        margin-top: 8px;
         font-size: 14px;
+    }
+
+    mat-dialog-content div>p {
+        margin-top: 4px;
+        font-family: cursive;
+        font-size: 15px;
     }
 
     mat-dialog-actions {
@@ -89,5 +334,110 @@ mat-dialog-actions {
         padding-right: 8px;
         margin-top: 23px;
         margin-right: 3px;
+    }
+
+    .form-text {
+        font-size: 13px;
+        display: block;
+        margin-left: 64px;
+    }
+
+    #cancelBtn {
+        width: 170px;
+        height: auto;
+        padding: 9px 0px 9px 3px;
+        margin-top: -13px;
+        position: absolute;
+        right: 118px;
+    }
+
+    #submitBtn {
+        width: 170px;
+        height: auto;
+        padding: 9px 0px 9px 3px;
+        margin-top: -13px;
+    }
+
+    mat-dialog-actions {
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 8px;
+        margin-top: 0px;
+        margin-right: 3px;
+    }
+
+    @media screen and (min-width:1300px) {
+
+        h2 {
+            margin-top: 2px;
+            margin-left: 2px;
+            margin-right: 2px;
+            margin-bottom: 2px;
+            display: flex;
+            justify-content: center;
+            background-color: #0e3880;
+            height: 41px;
+        }
+
+        body {
+            width: 486px;
+            max-height: fit-content !important;
+        }
+
+        h2>p {
+            color: white;
+            font-size: 19px;
+            margin-top: 3px;
+        }
+
+        mat-dialog-content div {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        mat-dialog-content div>p {
+            margin-top: 11px;
+            font-family: cursive;
+            font-size: 20px;
+        }
+
+        .form-text {
+            font-size: 15px;
+            display: block;
+            margin-left: 80px;
+        }
+
+        mat-dialog-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 8px;
+            margin-top: 23px;
+            margin-right: 3px;
+        }
+
+        #cancelBtn {
+            width: 195px;
+            height: auto;
+            padding: 9px 0px 9px 3px;
+            margin-top: -13px;
+            position: absolute;
+            right: 139px;
+
+        }
+
+        #submitBtn {
+            width: 195px;
+            height: auto;
+            padding: 9px 0px 9px 3px;
+            margin-top: -13px;
+        }
+
+        mat-dialog-actions {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 8px;
+            margin-top: 0px;
+            margin-right: 3px;
+        }
     }
 }

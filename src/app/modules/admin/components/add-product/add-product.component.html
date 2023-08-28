@@ -14,8 +14,9 @@
         <mat-label>Token</mat-label>
         <input matInput placeholder="Enter Valid Token" formControlName="token">
         <span class="form-text text-danger"
-            *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)"></span>
+            *ngIf="Token_Func?.errors?.['required'] && (Token_Func?.touched || Token_Func?.dirty)">Error : Enter Token</span>
     </mat-form-field>
+   
 
     <mat-form-field id="selectionBox" appearance="outline">
         <mat-label>Select Device Type</mat-label>
@@ -29,49 +30,49 @@
             <mat-option value="Server">Server</mat-option>
         </mat-select>
         <span class="form-text text-danger"
-            *ngIf="DevType_Func?.errors?.['required'] && (DevType_Func?.touched || DevType_Func?.dirty)"></span>
+            *ngIf="DevType_Func?.errors?.['required'] && (DevType_Func?.touched || DevType_Func?.dirty)">Error : Enter Device Type</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Other Device Type</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="DevTypeOther">
         <span class="form-text text-danger"
-            *ngIf="DevTypeOther_Func?.errors?.['required'] && (DevTypeOther_Func?.touched || DevTypeOther_Func?.dirty)"></span>
+            *ngIf="DevTypeOther_Func?.errors?.['required'] && (DevTypeOther_Func?.touched || DevTypeOther_Func?.dirty)">Error : Enter Other Device Type</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Make</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Make">
         <span class="form-text text-danger"
-            *ngIf="Make_Func?.errors?.['required'] && (Make_Func?.touched || Make_Func?.dirty)"></span>
+            *ngIf="Make_Func?.errors?.['required'] && (Make_Func?.touched || Make_Func?.dirty)">Error : Enter Device Make</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Model</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Model">
         <span class="form-text text-danger"
-            *ngIf="Model_Func?.errors?.['required'] && (Model_Func?.touched || Model_Func?.dirty)"></span>
+            *ngIf="Model_Func?.errors?.['required'] && (Model_Func?.touched || Model_Func?.dirty)">Error : Enter Device Model</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Owner</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Owner">
         <span class="form-text text-danger"
-            *ngIf="Owner_Func?.errors?.['required'] && (Owner_Func?.touched || Owner_Func?.dirty)"></span>
+            *ngIf="Owner_Func?.errors?.['required'] && (Owner_Func?.touched || Owner_Func?.dirty)">Error : Enter Device Owner</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Location</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Location">
         <span class="form-text text-danger"
-            *ngIf="Location_Func?.errors?.['required'] && (Location_Func?.touched || Location_Func?.dirty)"></span>
+            *ngIf="Location_Func?.errors?.['required'] && (Location_Func?.touched || Location_Func?.dirty)">Error : Enter Device Location</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Serial</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Serial">
         <span class="form-text text-danger"
-            *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)"></span>
+            *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)">Error : Enter Device Serial</span>
     </mat-form-field>
 
     <!---Purchase date----->
@@ -81,6 +82,11 @@
             [(ngModel)]="modifiedDate1">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <span class="form-text text-danger"
+            *ngIf="PurchaseDate_Func?.errors?.['required'] 
+            && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">
+            Error : Enter Purchase Date
+        </span>
     </mat-form-field>
 
     <!---Warranty date----->
@@ -90,6 +96,11 @@
             [(ngModel)]="modifiedDate2">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
+        <span class="form-text text-danger"
+            *ngIf="WarrantyExpDate_Func?.errors?.['required'] 
+            && (WarrantyExpDate_Func?.touched || WarrantyExpDate_Func?.dirty)">
+            Error : Enter Warranty Exp Date
+        </span>
     </mat-form-field>
 
     <!---Service date----->
@@ -99,48 +110,53 @@
             [(ngModel)]="modifiedDate3">
         <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
         <mat-datepicker #picker3></mat-datepicker>
+        <span class="form-text text-danger"
+            *ngIf="ServiceExpDate_Func?.errors?.['required'] 
+            && (ServiceExpDate_Func?.touched || ServiceExpDate_Func?.dirty)">
+            Error : Enter Service Exp Date
+        </span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Value</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Value">
         <span class="form-text text-danger"
-            *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)"></span>
+            *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)">Error: Enter Device</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Size</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Size">
         <span class="form-text text-danger"
-            *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)"></span>
+            *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)">Error: Enter Size</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Toner</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="Toner">
         <span class="form-text text-danger"
-            *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)"></span>
+            *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)">Error: Enter Toner</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device MAC Address</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="MacAddress">
         <span class="form-text text-danger"
-            *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)"></span>
+            *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)">Error: Enter MAC</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device IP Address</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="IPAddress">
         <span class="form-text text-danger"
-            *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)"></span>
+            *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)">Error: Enter IP Add.</span>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Device Cell Number</mat-label>
         <input matInput placeholder="Enter NA if null" formControlName="CellNumber">
         <span class="form-text text-danger"
-            *ngIf="CellNumber_Func?.errors?.['required'] && (CellNumber_Func?.touched || CellNumber_Func?.dirty)"></span>
+            *ngIf="CellNumber_Func?.errors?.['required'] && (CellNumber_Func?.touched || CellNumber_Func?.dirty)">Error: Enter CellNumber</span>
     </mat-form-field>
 
     <div id="buttonDiv">

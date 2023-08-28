@@ -12,6 +12,7 @@
         <div><strong>Device Make : </strong>{{this.x.Make}}</div>
         <div><strong>Device Owner : </strong>{{this.x.Owner}}</div>
         <div><strong>Device Model: </strong>{{this.x.Model}}</div>
+        <div><strong>Device Location: </strong>{{this.x.Location}}</div>
         <div><strong>Device Serial : </strong>{{this.x.Serial}}</div>
         <div><strong>Device Size : </strong>{{this.x.Size}}</div>
         <div><strong>Device Toner : </strong>{{this.x.Toner}}</div>
@@ -19,6 +20,9 @@
         <div><strong>Device Warranty Expiry Date : </strong>{{this.x.WarrantyExpDate | date}}</div>
         <div><strong>Device Service Expiry Date : </strong>{{this.x.ServiceExpDate | date}}</div>
         <div><strong>Device Purchase Date : </strong>{{this.x.PurchaseDate | date}} </div>
+        <div><strong>Device MAC : </strong>{{this.x.MacAddress}}</div>
+        <div><strong>Device IP : </strong>{{this.x.IPAddress}}</div>
+        <div><strong>Device CellNumber : </strong>{{this.x.CellNumber}}</div>
 
         <button mat-raised-button type="button" color="warn" id="closeBtn" (click)="closeDialog()">Close</button>
         <button mat-raised-button matTooltip="Export" type="button" color="accent" id="excelBtn" (click)="excelExport()">Export <img src="assets/excelIcon.png" id="excelImg"></button> 

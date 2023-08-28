@@ -15,6 +15,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ViewProductComponent } from '../view-product/view-product.component';
 import { DeleteProductComponent } from '../delete-product/delete-product.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 export interface UserData {
   DevId:number;
@@ -30,9 +33,10 @@ export interface UserData {
   standalone: true,
   imports: [ MatFormFieldModule, MatInputModule, 
              MatTableModule, MatCardModule,
-             MatButtonModule,MatSortModule, MatPaginatorModule,
-             MatIconModule,MatDialogModule,CommonModule,
-             MatTooltipModule],
+             MatButtonModule, MatSortModule, MatPaginatorModule,
+             MatIconModule, MatDialogModule, CommonModule,
+             MatTooltipModule, MatInputModule, MatFormFieldModule,
+             MatDatepickerModule, MatNativeDateModule, ReactiveFormsModule ],
 })
 
 export class ProductHomepageComponent implements OnInit , AfterViewInit{
@@ -42,6 +46,8 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
   inventoryData:any;
   tableData:any;
   isDataLoading = true;
+  date:any;
+  serializedDate:any;
 
   @ViewChild(MatPaginator) paginator!:MatPaginator;
   @ViewChild(MatSort) sort!:MatSort;
@@ -61,8 +67,6 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
   }
 
   ngOnInit() {
-    
-    
     this.serv.getAllDataFunc().subscribe((res:any)=>{
       this.isDataLoading = false;
       this.inventoryData = JSON.parse(res);
@@ -71,14 +75,14 @@ export class ProductHomepageComponent implements OnInit , AfterViewInit{
     });
   }
 
-  editProduct(id:any)
-  {
+  editProduct(id:any) {
       const dialog = this.matDialog.open(EditProductComponent, 
         {
             data : { id }
         });
 
-        dialog.afterClosed().subscribe(res => {     
+        dialog.afterClosed().subscribe(res => {    
+          
         });
   }
 

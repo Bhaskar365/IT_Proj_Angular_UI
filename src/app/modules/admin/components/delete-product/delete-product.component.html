@@ -21,7 +21,7 @@
     </mat-dialog-content>
     
     <mat-dialog-actions>
-        <button mat-raised-button color="primary" mat-dialog-close>Cancel</button>
-        <button mat-raised-button color="warn" [disabled]="tokenInput.invalid" (click)="deleteDevice(this.tableData.DevId)">Delete</button>
+        <button id="cancelBtn" mat-raised-button color="primary" mat-dialog-close>Cancel</button>
+        <button id="submitBtn" mat-raised-button color="warn" [disabled]="tokenInput.invalid" (click)="deleteDevice(this.tableData.DevId)">Delete</button>
     </mat-dialog-actions>
 </body>

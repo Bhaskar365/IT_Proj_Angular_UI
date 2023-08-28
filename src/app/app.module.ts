@@ -31,6 +31,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,7 @@ import { MatSortModule } from '@angular/material/sort';
       }
     })
   ],
-  providers: [ApiServiceService],
+  providers: [ApiServiceService,DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
