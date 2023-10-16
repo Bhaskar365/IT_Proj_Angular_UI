@@ -116,7 +116,7 @@ export class PieGraphComponent implements OnInit {
 
         datasets: [{
 
-          label: '# of Votes',
+          label: '# Count',
 
           data: [this.laptop2, this.server2, this.printer2, this.polycom2, this.mobile2, this.monitor2, this.misc2],
 
@@ -226,7 +226,7 @@ export class PieGraphComponent implements OnInit {
 
           datasets: [{
 
-            label: '# of Votes',
+            label: '# Count',
 
             data: [this.laptop1, this.server1, this.printer1, this.monitor1, this.polycom1, this.mobile1, this.misc1],
 

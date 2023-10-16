@@ -68,44 +68,21 @@
             <!---Purchase date----->
             <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
                 <mat-label id="pDate">Purchase Date</mat-label>
-                <input [value]="this.purchaseBindingDate | date"
-                    matInput formControlName="PurchaseDate" 
+                <input matInput formControlName="PurchaseDate" 
                     [matDatepicker]="picker"
-                    (dateInput)="dateChange1(picker)" 
-                    [(ngModel)]="modifiedDate1">
+                    (dateInput)="dateChange1(picker)">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
-
-            <mat-form-field>
-                Selected date:
-                <input matInput [value]="this.purchaseBindingDate | date" />
-              </mat-form-field>
-
             <span class="form-text text-danger"
                 *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>
-
-            <!---Purchase date----->
-                <!-- <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
-                            <mat-label id="pDate">Purchase Date</mat-label>
-                            <input [value]="this.y" 
-                                (dateInput)="dateChange1(picker)" 
-                                formControlName="PurchaseDate"
-                                matInput [matDatepicker]="picker" />
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-                <span class="form-text text-danger"
-                    *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>     -->
-
 
             <!---Warranty date----->
             <mat-form-field class="example-full-width" appearance="outline" id="warrDate">
                 <mat-label id="wexDate">Warranty Exp. Date</mat-label>
                 <input matInput formControlName="WarrantyExpDate" 
                     [matDatepicker]="picker2"
-                    (dateInput)="dateChange2(picker2)" 
-                    [(ngModel)]="modifiedDate2">
+                    (dateInput)="dateChange2(picker2)">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
@@ -117,8 +94,7 @@
                 <mat-label id="servexDate">Service Exp. Date</mat-label>
                 <input matInput formControlName="ServiceExpDate" 
                     [matDatepicker]="picker3"
-                    (dateInput)="dateChange3(picker3)" 
-                    [(ngModel)]="modifiedDate3">
+                    (dateInput)="dateChange3(picker3)">
                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                 <mat-datepicker #picker3></mat-datepicker>
             </mat-form-field>

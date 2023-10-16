@@ -90,4 +90,26 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+
+  // loginSubmit() {
+  //   this.loginAuth.loginUser([
+  //     this.loginForm.value.email,
+  //     this.loginForm.value.pwd
+  //   ]
+  //   ).subscribe(res => {
+  //     if (res == 'Failure') 
+  //     {
+  //       this.responseMsg = 'Login Unsuccessful';
+  //       setTimeout(()=>{
+  //         this.isDataLoading = false;
+  //       },2000)
+  //     }
+  //     else {
+  //       this.loginAuth.setToken(res);
+  //       this.responseMsg = 'Login Successful';
+  //       this.isDataLoading = false;
+  //       // this.router.navigateByUrl('admin/product-homepage');
+  //     }
+  //   });
+  // }
 }

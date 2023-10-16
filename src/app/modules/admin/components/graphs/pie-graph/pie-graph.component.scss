@@ -103,9 +103,9 @@ mat-card {
 @media screen and (min-width:350px) {
 
     #myChart1 {
-        width: 310px !important;
-        margin-top: -1px;
-        height: 302px !important;
+        width: 286px !important;
+        margin-top: 14px;
+        height: 296px !important;
         margin-left: 31px;
     }
 
@@ -149,9 +149,9 @@ mat-card {
 @media screen and (min-width:400px) {
 
     #myChart1 {
-        width: 321px !important;
-        height: 293px !important;
-        margin-top: 0px;
+        width: 293px !important;
+        height: 285px !important;
+        margin-top: 21px;
         margin-left: 44px;
     }
 
@@ -292,10 +292,10 @@ mat-card {
     }
 
     #myChart1 {
-        width: 352px !important;
-        height: 280px !important;
-        margin-top: -2px;
-        margin-left: 84px;
+        width: 320px !important;
+        height: 295px !important;
+        margin-top: 24px;
+        margin-left: 95px;
     }
 
     #myChart2Canvas {
@@ -391,10 +391,10 @@ mat-card {
     }
 
     #myChart1 {
-        width: 417px !important;
-        height: 357px !important;
-        margin-top: 2px;
-        margin-left: 102px;
+        width: 396px !important;
+        height: 395px !important;
+        margin-top: 22px;
+        margin-left: 113px;
     }
 
     #myChart2Canvas {
@@ -425,7 +425,7 @@ mat-card {
     }
 
     #fromDiv {
-        font-size: 13px;
+        font-size: 12px;
         margin-left: -1px;
         text-align: center;
         margin-top: 18px;
@@ -455,7 +455,7 @@ mat-card {
         display: flex;
         justify-content: center;
         height: 49px;
-        font-size: 9px;
+        font-size: 7px;
         margin-top: 17px;
         margin-bottom: 11px;
         margin-left: 5px;
@@ -509,17 +509,17 @@ mat-card {
     }
 
     #myChart1 {
-        width: 382px !important;
-        height: 352px !important;
-        margin-top: 7px;
-        margin-left: 145px;
+        width: 363px !important;
+        height: 367px !important;
+        margin-top: 27px;
+        margin-left: 157px;
     }
 
     #myChart2Canvas {
         height: 376px !important;
         width: 394px !important;
         margin-top: 12px;
-        margin-left: 171px;  
+        margin-left: 171px;
     }
 
     #resetMat {
@@ -544,10 +544,10 @@ mat-card {
 
 
     #fromDiv {
-        font-size: 14px;
-        margin-left: 0px;
+        font-size: 10px;
+        margin-left: -1px;
         text-align: center;
-        margin-top: 17px;
+        margin-top: 21px;
     }
 
     #fromDiv>input {
@@ -587,7 +587,7 @@ mat-card {
         display: flex;
         justify-content: center;
         height: 53px;
-        font-size: 11px;
+        font-size: 9px;
         margin-top: 17px;
         margin-bottom: 11px;
         margin-left: 5px;
@@ -641,10 +641,10 @@ mat-card {
     }
 
     #myChart1 {
-        width: 447px !important;
-        height: 373px !important;
-        margin-top: -3px;
-        margin-left: 178px;
+        width: 412px !important;
+        height: 400px !important;
+        margin-top: 15px;
+        margin-left: 207px;
     }
 
     #myChart2Canvas {
@@ -770,7 +770,7 @@ mat-card {
     #secondChart {
         display: block;
     }
-    
+
     #myChart1 {
         width: 468px !important;
         height: 465px !important;
@@ -1335,7 +1335,7 @@ mat-card {
     }
 
     #fromDiv {
-        font-size: 16px !important;
+        font-size: 10px !important;
         margin-left: 0px !important;
         text-align: center !important;
         margin-top: 21px !important;
@@ -1343,13 +1343,13 @@ mat-card {
     }
 
     #fromDiv>input {
-        width: 74%;
+        width: 67%;
         margin-bottom: 7px;
         margin-top: 9px;
-        margin-left: 4px;
+        margin-left: 6px;
         margin-right: 7px;
-        font-size: 15px;
-        padding: 5px;
+        font-size: 16px;
+        padding: 4px;
     }
 
     #toDiv {
@@ -1377,7 +1377,7 @@ mat-card {
 
     mat-card {
         width: 36% !important;
-        font-size: 18px;
+        font-size: 13px;
         margin-top: 16px;
         margin-bottom: 11px;
         margin-left: 7px;
@@ -1411,7 +1411,7 @@ mat-card {
         position: absolute;
         margin-top: 70px;
         font-size: 12px;
-        left: 297px;
+        left: 291px;
         font-family: cursive;
         font-weight: 500;
     }
@@ -1419,7 +1419,7 @@ mat-card {
     .secondErr {
         position: absolute;
         display: flex;
-        left: 471px !important;
+        left: 460px !important;
         margin-top: 70px;
         font-size: 12px;
     }
@@ -1428,7 +1428,7 @@ mat-card {
 @media screen and (min-width:1331px) {
 
     #myChart1 {
-        width: 546px !important;
+        width: 500px !important;
         height: 483px !important;
         margin-top: 24px;
         margin-left: 462px;
@@ -1533,6 +1533,13 @@ mat-card {
 
 @media screen and (min-width:1500px) {
 
+    #myChart1 {
+        width: 500px !important;
+        height: 483px !important;
+        margin-top: 24px;
+        margin-left: 462px;
+    }
+
     .form-text {
         position: absolute;
         margin-top: 70px;
@@ -1636,19 +1643,6 @@ mat-card {
         margin-left: 14px;
     }
 
-    mat-card {
-        width: 36% !important;
-        font-size: 21px;
-        margin-top: 16px;
-        margin-bottom: 11px;
-        margin-left: 7px;
-        margin-right: 7px !important;
-        text-align: center;
-        box-shadow: 1px 1px 2px 1px gray;
-        color: #1200ff;
-        cursor: default;
-    }
-
     #fromDiv {
         font-size: 19px !important;
         margin-left: 1px !important;
@@ -1656,16 +1650,6 @@ mat-card {
         text-align: center !important;
         margin-top: 20px !important;
         margin-right: 4px !important;
-    }
-
-    #fromDiv>input {
-        width: 74%;
-        margin-bottom: 7px;
-        margin-top: 7px;
-        margin-left: 4px;
-        margin-right: 7px;
-        font-size: 16px;
-        padding: 5px;
     }
 
     #toDiv {

@@ -18,10 +18,13 @@ export class EditProductComponent implements OnInit {
   modifiedDate1:any;
   modifiedDate2:any;
   modifiedDate3:any;
-  y:any;
-  x:any;
+  purchaseModifiedDate:any;
+  warrantyExpModifiedDate:any;
+  serviceExpModifiedDate:any;
 
-  purchaseBindingDate:any;
+  purchaseFormDate:any;
+  warrantyExpFormDate:any;
+  serviceExpFormDate:any;
   dateSample:any;
 
   updateForm = new FormGroup({
@@ -58,35 +61,22 @@ export class EditProductComponent implements OnInit {
       this.updateForm.patchValue(this.data.id);
       this.userData = this.data.id;
 
-      this.purchaseBindingDate = this.updateForm.get('PurchaseDate')?.value;
-      // console.log(this.purchaseBindingDate);
+      this.purchaseFormDate = this.updateForm.value.PurchaseDate;
+      this.purchaseModifiedDate = moment(this.purchaseFormDate).format('YYYY-MM-DD');
 
-      let y = new Date(this.purchaseBindingDate);
-      // console.log(y);
+      this.warrantyExpFormDate = this.updateForm.value.WarrantyExpDate;
+      this.warrantyExpModifiedDate = moment(this.warrantyExpFormDate).format('YYYY-MM-DD');
 
-      this.dateSample = this.datePipe.transform(this.purchaseBindingDate,'YYYY-MM-dd');
-      // console.log(this.dateSample);
+      this.serviceExpFormDate = this.updateForm.value.ServiceExpDate;
+      this.serviceExpModifiedDate = moment(this.serviceExpFormDate).format('YYYY-MM-DD');
 
-      // let z = this.updateForm.get('PurchaseDate')?.setValue(new Date(this.purchaseBindingDate).toISOString().split('T')[0]);
-      let z = this.updateForm.get('PurchaseDate')?.setValue(new Date(this.purchaseBindingDate).toISOString());
-      console.log(z)
+      this.updateForm.patchValue({
+        PurchaseDate: this.purchaseModifiedDate,
+        ServiceExpDate : this.serviceExpModifiedDate,
+        WarrantyExpDate : this.warrantyExpModifiedDate
+      })
 
-      // let x = this.purchaseBindingDate;
-      // console.log(x);
-      // this.purchaseBindingDate = this.updateForm.controls.PurchaseDate.value;
-      // console.log(this.purchaseBindingDate);
-      // this.purchaseBindingDate = this.purchaseBindingDate.value;
-      // console.log(this.purchaseBindingDate);
-      // this.y = new Date(this.purchaseBindingDate);
-      // console.log(this.y);
-      // this.x = moment(this.purchaseBindingDate).format('YYYY-MM-DD')
-      // this.y = new Date(this.purchaseBindingDate.value).toISOString();
-      // console.log(this.y);
-      // this.y = this.datePipe.transform(this.y,'yyyy/MM/dd');
-      // console.log(this.y);
-
-      // this.updateForm.get('PurchaseDate')?.setValue(this.x);
-      // console.log(this.updateForm.get('PurchaseDate')?.value);
+      console.log(this.userData);
     }
 
     //update submit

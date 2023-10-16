@@ -882,6 +882,9 @@ mat-card {
 
 @media screen and (min-width:1020px) {
 
+
+
+
     #secondChart {
         display: block;
     }
@@ -1095,6 +1098,7 @@ mat-card {
         margin-left: 32px;
     }
 
+
     mat-card {
         width: 33% !important;
         font-size: 15px;
@@ -1226,6 +1230,8 @@ mat-card {
         margin-left: 32px;
     }
 
+
+
     mat-card {
         width: 33% !important;
         font-size: 14px;
@@ -1317,13 +1323,13 @@ mat-card {
         margin-right: 4px !important;
     }
 
-    #fromDiv>input {
-        width: 74%;
+    #fromDiv > input {
+        width: 67%;
         margin-bottom: 7px;
         margin-top: 9px;
         margin-left: 4px;
         margin-right: 7px;
-        font-size: 15px;
+        font-size: 13px;
         padding: 5px;
     }
 
@@ -1357,9 +1363,11 @@ mat-card {
         margin-left: 32px;
     }
 
+
+
     mat-card {
         width: 36% !important;
-        font-size: 18px;
+        font-size: 13px;
         margin-top: 16px;
         margin-bottom: 11px;
         margin-left: 7px;
@@ -1409,6 +1417,8 @@ mat-card {
 
 @media screen and (min-width:1331px) {
     
+
+
     .form-text {
         position: absolute;
         margin-top: 70px;
@@ -1444,6 +1454,8 @@ mat-card {
         margin-top: 70px;
         font-size: 12px;
     }
+
+
 }
 
 @media screen and (min-width:1400px) {
@@ -1544,6 +1556,8 @@ mat-card {
         margin-top: 70px;
         font-size: 12px;
     }
+
+
 }
 
 @media screen and (min-width:1540px) {
@@ -1564,6 +1578,8 @@ mat-card {
         margin-top: 70px;
         font-size: 12px;
     }
+
+
 }
 
 @media screen and (min-width:1570px) {
@@ -1611,18 +1627,6 @@ mat-card {
         margin-left: 14px;
     }
 
-    mat-card {
-        width: 36% !important;
-        font-size: 21px;
-        margin-top: 16px;
-        margin-bottom: 11px;
-        margin-left: 7px;
-        margin-right: 7px !important;
-        text-align: center;
-        box-shadow: 1px 1px 2px 1px gray;
-        color: #1200ff;
-        cursor: default;
-    }
 
     #fromDiv {
         font-size: 19px !important;
@@ -1631,16 +1635,6 @@ mat-card {
         text-align: center !important;
         margin-top: 20px !important;
         margin-right: 4px !important;
-    }
-
-    #fromDiv > input {
-        width: 74%;
-        margin-bottom: 7px;
-        margin-top: 7px;
-        margin-left: 4px;
-        margin-right: 7px;
-        font-size: 16px;
-        padding: 5px;
     }
 
     #toDiv {
@@ -1658,5 +1652,4 @@ mat-card {
         margin-right: 9px;
         height: 40px;
     }
-
 }
