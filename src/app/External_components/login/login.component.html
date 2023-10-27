@@ -1,5 +1,5 @@
 <!-- <div class="outer" [hidden]="!isDataLoading"> -->
-<div class="outer">
+<div class="outer" [hidden]="!spinnerLoading">
     <div class="container">
         <div class="row">
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
@@ -7,11 +7,13 @@
                     <div class="panel-heading">
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
-                    <!-- <div class="alert alert-success" role="alert">
+                    <div class="alert alert-success mt-2 mb-1" role="alert" [hidden]="successMsg">
                         {{this.responseMsg}}
-                    </div> -->
-                    <p class="text-center fs-3" [ngClass]="isUserValid ? 'text-success pb-1':'text-danger pb-1' ">
-                        {{this.responseMsg}}</p>
+                    </div>
+        
+                    <div class="alert alert-danger mt-2 mb-1" role="alert" [hidden]="failMsg">
+                        {{this.responseMsg}}
+                    </div>
                     <div class="panel-body p-3">
 
                         <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
@@ -86,6 +88,6 @@
     </div>
 </div>
 
-<span [hidden]="isDataLoading">
+<span [hidden]="spinnerLoading">
     <span class="loader"></span>
 </span>

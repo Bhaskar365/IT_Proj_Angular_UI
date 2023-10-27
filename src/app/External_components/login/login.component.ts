@@ -19,13 +19,13 @@ export class LoginComponent implements OnInit {
   eyeIcon: string = "fa-eye-slash";
   responseMsg: any = '';
   loginForm!: FormGroup;
-  isUserValid: boolean = false;
-  isDataLoading = true;
+  failMsg: boolean = true;
+  spinnerLoading: boolean = true;
+  successMsg:boolean = true;
 
   constructor(private fb: FormBuilder,
     private loginAuth: ApiServiceService,
-    private router: Router,
-    private toastServ: NgToastService) { }
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -49,67 +49,64 @@ export class LoginComponent implements OnInit {
     return this.loginForm.get('pwd') as FormControl;
   }
 
-  loginSubmit() {
+  loginSubmit() 
+  {
     this.loginAuth.loginUser([
       this.loginForm.value.email,
       this.loginForm.value.pwd
     ]
     ).subscribe(res => {
-      if (res == 'Failure') 
-      {
-        
-        this.isUserValid = false;
-        this.responseMsg = 'Login Unsuccessful';
-        Swal.fire({
-          title: 'Authentication Unsuccessful',
-          text: 'Error Logging In',
+      this.failMsg = true;
+      if (res == 'Failure') {
+        this.responseMsg = 'Wrong Credentials. Refreshing Page';
+        this.failMsg = false;
+        this.spinnerLoading = true;
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1300,
+          timerProgressBar: true,
+        })
+
+        Toast.fire({
           icon: 'error',
-          width:'800px',
-          timer: 1500,
-          timerProgressBar: true
-        });
-        setTimeout(()=>{
-          this.isDataLoading = false;
+          title: 'Credentials Incorrect'
+        })
+
+        setTimeout(() => {
+          this.spinnerLoading = false;
           window.location.reload();
-        },2000)
+        }, 2000)
       }
-      else {
-        this.isUserValid = true;
-        this.loginAuth.setToken(res);
+      else 
+      {
         this.responseMsg = 'Login Successful';
-        this.isDataLoading = false;
-        Swal.fire({
-          title: 'Authentication Successful',
-          text: 'Login Successfully',
+        this.successMsg = true;
+        this.loginAuth.setToken(res);
+        this.successMsg = false;
+        this.spinnerLoading = true;
+
+        const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1300,
+          timerProgressBar: true,
+        })
+        
+        Toast.fire({
           icon: 'success',
-          width:'800px',
-          timer:1500,
-          timerProgressBar:true,
-      })
-        this.router.navigateByUrl('admin/product-homepage');
+          title: 'Signed in successfully'
+        })
+
+        setTimeout(()=>{
+          this.spinnerLoading = false;
+          this.router.navigateByUrl('admin/product-homepage');
+        },1500)
       }
+
     });
   }
-
-  // loginSubmit() {
-  //   this.loginAuth.loginUser([
-  //     this.loginForm.value.email,
-  //     this.loginForm.value.pwd
-  //   ]
-  //   ).subscribe(res => {
-  //     if (res == 'Failure') 
-  //     {
-  //       this.responseMsg = 'Login Unsuccessful';
-  //       setTimeout(()=>{
-  //         this.isDataLoading = false;
-  //       },2000)
-  //     }
-  //     else {
-  //       this.loginAuth.setToken(res);
-  //       this.responseMsg = 'Login Successful';
-  //       this.isDataLoading = false;
-  //       // this.router.navigateByUrl('admin/product-homepage');
-  //     }
-  //   });
-  // }
 }
