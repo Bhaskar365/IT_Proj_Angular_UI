@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { BehaviorSubject, Observable, Subject, catchError,map } from 'rxjs';
+import { note_Add_Interface, note_Del_Interface, note_Get_Interface, note_Upd_Interface } from '../modules/admin/components/models/userModel';
 
 interface Device_Data {
   data : string;
@@ -21,11 +22,16 @@ export class ApiServiceService
 
   //////////////////INVENTORY API////////////////////////////
 
-  getAllDataUrl =   "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
-     addDataUrl =   "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
+    getAllDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_GetAll";
+       addDataUrl = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Add";
   getUserDataById = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Get";
   updateDeviceURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Upd";
   deleteDeviceURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Device_Del";
+      
+      note_AddURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Note_Add";
+      note_DelURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Note_Del";
+      note_GetURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Note_Get";
+      note_UpdURL = "https://tools.brandinstitute.com/wsInventory/wsInventory.asmx/Note_Upd";
 
   getAllDataFunc()
   {
@@ -76,6 +82,43 @@ export class ApiServiceService
         return res;
       }))
   }
+
+  // Add Note API
+  addNoteAPI(data:note_Add_Interface) {
+    return this.http.post<any>(`${this.note_AddURL}`,data).pipe(catchError((err)=>{
+      return err;
+    }),map((res:any)=>{
+      return res;
+    }))
+  }
+
+  // Delete Note API
+  deleteNoteAPI(data:note_Del_Interface) {
+    return this.http.post<any>(`${this.note_DelURL}`,data).pipe(catchError((err)=>{
+      return err
+    }),map((res:any)=>{
+      return res;
+    }))
+  }
+
+  //Get Note API
+  getNoteAPI(data:note_Get_Interface){
+      return this.http.post<any>(`${this.note_GetURL}`,data).pipe(catchError((err:any)=>{
+        return err
+      }),map((res:any)=>{
+        return res;
+      }))
+  }
+
+  //Update Note API
+  updateNoteAPI(data:note_Upd_Interface){
+    return this.http.post<any>(`${this.note_UpdURL}`,data).pipe(catchError((err:any)=>{
+      return err
+    }),map((res:any)=>{
+      return res;
+    }))
+  }
+
 
   /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS STARTS---///////////////
   baseUrl = "https://localhost:7053/api/User/";

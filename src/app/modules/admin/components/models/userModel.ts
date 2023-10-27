@@ -41,3 +41,31 @@ export interface updateDataInterface
     CellNumber:string
 }
 
+export interface note_Add_Interface 
+{
+    token:string;
+    DevId:string;
+    Note:string;
+    AddBy:any;
+}
+
+export interface note_Del_Interface
+{
+   token:string;
+   NodeId:number;     
+}
+
+export interface note_Get_Interface
+{
+   token:string;
+   NodeId:number;     
+}
+
+export interface note_Upd_Interface
+{
+    token:string;
+    DevId:number;
+    NoteId:number;
+    Note:string;
+    AddBy:any;
+}
