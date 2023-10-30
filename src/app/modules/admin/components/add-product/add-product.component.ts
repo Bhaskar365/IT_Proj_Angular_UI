@@ -144,6 +144,7 @@ export class AddProductComponent implements OnInit {
         this.route.navigate(['/error']);
         return err;
       })).subscribe((res:any) => {
+        console.log(res.msg); 
         this.isDataLoading = false;
         if(res.msg == 'Invalid Token') 
         {
@@ -151,7 +152,7 @@ export class AddProductComponent implements OnInit {
         }
         else 
         { 
-          console.log(res.msg); 
+          console.log(res); 
         }
         Swal.fire({
           title: 'Added Successfully',
@@ -162,6 +163,7 @@ export class AddProductComponent implements OnInit {
           timerProgressBar: true,
         });
         this.route.navigate(['/admin/product-homepage']);
+        
       });
   }
 

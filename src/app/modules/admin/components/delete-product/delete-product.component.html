@@ -1,10 +1,11 @@
-<body>
+<body [hidden]="!notesBoxActive">
     <h2 mat-dialog-title>
         <p>Delete Notification</p>
     </h2>
     
     <mat-dialog-content>
-        <div>Do you want to delete the product with the following -
+        <div>
+            <span id="headerText">Do you want to delete the product with the following -</span>
             <p>
                 ID : <strong>{{this.tableData.DevId}}</strong>
                 <br/>
@@ -17,7 +18,16 @@
                 <span class="form-text text-danger"
                     *ngIf="tokenInput.get('token')?.hasError('required')">Enter valid token</span>
             </p>
+            Deletion Notes
+            <div [formGroup]="deletedProductNote">
+                 <textarea formControlName="Note" rows="2" cols="50" 
+                    placeholder="Enter something......"></textarea>
+                 <span id="notesCSS"
+                    *ngIf="deletedProductNote.get('Note')?.hasError('required')">Enter enter comments</span>
+            </div>
         </div>
+        <hr/>
+
     </mat-dialog-content>
     
     <mat-dialog-actions>
@@ -25,3 +35,17 @@
         <button id="submitBtn" mat-raised-button color="warn" [disabled]="tokenInput.invalid" (click)="deleteDevice(this.tableData.DevId)">Delete</button>
     </mat-dialog-actions>
 </body>
+
+
+<!-- <mat-card [hidden]="!notesBoxActive">
+    <mat-card-content>
+        <button (click)="x()">Click</button>
+        <form>
+            a <input formControlName="token"/>
+            b <input formControlName="DevId"/>
+            c <input />
+        </form>
+    </mat-card-content>
+</mat-card> -->
+
+

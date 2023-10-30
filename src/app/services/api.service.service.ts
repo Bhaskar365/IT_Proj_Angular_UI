@@ -49,6 +49,7 @@ export class ApiServiceService
       return this.http.post<any>(`${this.addDataUrl}`,data).pipe(catchError((err)=>{
         return err;
       }), map(((res:any)=>{
+        console.log(res);
         return JSON.stringify(res);
       })));
   }

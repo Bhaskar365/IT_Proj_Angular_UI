@@ -43,9 +43,9 @@ export interface updateDataInterface
 
 export interface note_Add_Interface 
 {
-    token:string;
+    token:string|null|undefined;
     DevId:string;
-    Note:string;
+    Note:string|null|undefined;
     AddBy:any;
 }
 
