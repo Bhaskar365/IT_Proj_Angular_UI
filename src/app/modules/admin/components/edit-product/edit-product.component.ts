@@ -11,6 +11,7 @@ import { ApiServiceService } from 'src/app/services/api.service.service';
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.scss']
 })
+
 export class EditProductComponent implements OnInit {
 
   userId:any;
@@ -58,40 +59,77 @@ export class EditProductComponent implements OnInit {
 
     ngOnInit() 
     {
-      this.updateForm.patchValue(this.data.id);
+      // this.updateForm.patchValue(this.data.id);
       this.userData = this.data.id;
 
-      this.purchaseFormDate = this.updateForm.value.PurchaseDate;
-      this.purchaseModifiedDate = moment(this.purchaseFormDate).format('YYYY-MM-DD');
-
-      this.warrantyExpFormDate = this.updateForm.value.WarrantyExpDate;
-      this.warrantyExpModifiedDate = moment(this.warrantyExpFormDate).format('YYYY-MM-DD');
-
-      this.serviceExpFormDate = this.updateForm.value.ServiceExpDate;
-      this.serviceExpModifiedDate = moment(this.serviceExpFormDate).format('YYYY-MM-DD');
+      console.log(this.userData);
 
       this.updateForm.patchValue({
-        PurchaseDate: this.purchaseModifiedDate,
-        ServiceExpDate : this.serviceExpModifiedDate,
-        WarrantyExpDate : this.warrantyExpModifiedDate
-      })
+        token: this.userData.token,
+        DevId: this.userData.DevId,
+        DevType: this.userData.DevType,
+        DevTypeOther : this.userData.DevTypeOther,
+        Make : this.userData.Make,
+        Model : this.userData.Model,
+        Owner: this.userData.Owner,
+        Location : this.userData.Location,
+        Serial : this.userData.Serial,
+        PurchaseDate: this.convertToDate(this.userData.PurchaseDate),
+        WarrantyExpDate: this.convertToDate(this.userData.WarrantyExpDate),
+        ServiceExpDate: this.convertToDate(this.userData.ServiceExpDate),
+        Value : this.userData.Value,
+        Size : this.userData.Size,
+        Toner: this.userData.Toner,
+        MacAddress : this.userData.MacAddress,
+        IPAddress: this.userData.IPAddress,
+        CellNumber : this.userData.CellNumber
+      });
+    }
 
-      console.log(this.userData);
+    convertToDate(dateString: string | undefined): string | null {
+      // Add your own logic to handle invalid date strings
+      if (!dateString) {
+        return null;
+      }
+    
+      const date = new Date(dateString);
+      return isNaN(date.getTime()) ? null : date.toISOString();
     }
 
     //update submit
     updateFormSubmit() {
-
-      let formData = this.updateForm.value as string;
-
-      this.api.updateDataFunc(formData).pipe(catchError((err:any)=> {
-        return err;
-      })).subscribe(res=> {
-        console.log(res);
-      });
+      // Clone the form value to avoid modifying the original form
+      const formData = { ...this.updateForm.value };
+    
+      // Convert dates to strings, handling undefined values
+      formData.PurchaseDate = this.formatDate(formData.PurchaseDate);
+      formData.WarrantyExpDate = this.formatDate(formData.WarrantyExpDate);
+      formData.ServiceExpDate = this.formatDate(formData.ServiceExpDate);
+    
+      // Now formData contains formatted date values, you can send it to the server
+      this.api.updateDataFunc(formData).subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     }
-
-  
+    
+    formatDate(date: Date | string | null | undefined): string | null {
+      if (date instanceof Date) {
+        // If it's a Date object, convert it to ISO string
+        return date.toISOString();
+      } else if (typeof date === 'string' && date.trim() !== '') {
+        // If it's a non-empty string, leave it as is
+        return date;
+      } else {
+        // If it's null, undefined, or an empty string, return null
+        return null;
+      }
+    }
+    
     get Token_Func() {
       return this.updateForm.get('token');
     }
@@ -168,34 +206,25 @@ export class EditProductComponent implements OnInit {
       return this.updateForm.controls?.['token'].hasError('required')?'Enter token':'';
     }
 
-    dateChange1(dateVal1:any){
-
+    dateChange1(dateVal1: any) {
       let y1 = dateVal1._model.selection;
       let z1 = moment(y1);
       let zz1 = moment(z1).format('YYYY-MM-DD');
-      this.modifiedDate1 = zz1;
-      console.log('dateChange1');
-      return this.modifiedDate1;
+      this.updateForm.get('PurchaseDate')?.setValue(zz1);
     }
-  
-    dateChange2(dateVal2:any){
-  
+    
+    dateChange2(dateVal2: any) {
       let y2 = dateVal2._model.selection;
       let z2 = moment(y2);
       let zz2 = moment(z2).format('YYYY-MM-DD');
-      this.modifiedDate2 = zz2;
-      console.log('dateChange2');
-      return this.modifiedDate2;
+      this.updateForm.get('WarrantyExpDate')?.setValue(zz2);
     }
-  
-    dateChange3(dateVal3:any){
-  
+    
+    dateChange3(dateVal3: any) {
       let y3 = dateVal3._model.selection;
       let z3 = moment(y3);
       let zz3 = moment(z3).format('YYYY-MM-DD');
-      this.modifiedDate3 = zz3;
-      console.log('dateChange3');
-      return this.modifiedDate3;
+      this.updateForm.get('ServiceExpDate')?.setValue(zz3);
     }
 
     closeDialog() {

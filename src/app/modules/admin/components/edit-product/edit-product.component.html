@@ -73,47 +73,39 @@
                 *ngIf="Serial_Func?.errors?.['required'] && (Serial_Func?.touched || Serial_Func?.dirty)">Serial
                 Required</span>
 
-            <!---Purchase date----->
+            <!-- Purchase date -->
             <mat-form-field class="example-full-width" appearance="outline" id="purcDate">
                 <mat-label id="pDate">Purchase Date</mat-label>
-                <input matInput formControlName="PurchaseDate" 
-                    [matDatepicker]="picker"
-                    (dateInput)="dateChange1(picker)"
-                    [(ngModel)]="this.modifiedDate1">
+                <input matInput formControlName="PurchaseDate" [matDatepicker]="picker" (dateInput)="dateChange1(picker)">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
-            </mat-form-field>
-            <span class="form-text text-danger"
-                *ngIf="PurchaseDate_Func?.errors?.['required'] && (PurchaseDate_Func?.touched || PurchaseDate_Func?.dirty)">Purchase Date Required</span>    
+              </mat-form-field>
 
-            <!---Warranty date----->
+            <!-- Warranty date -->
             <mat-form-field class="example-full-width" appearance="outline" id="warrDate">
                 <mat-label id="wexDate">Warranty Exp. Date</mat-label>
-                <input matInput formControlName="WarrantyExpDate" 
-                    [matDatepicker]="picker2"
-                    (dateInput)="dateChange2(picker2)"
-                    [(ngModel)]="this.modifiedDate2">
+                <input matInput formControlName="WarrantyExpDate" [matDatepicker]="picker2" (dateInput)="dateChange2(picker2)">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
             </mat-form-field>
             <span class="form-text text-danger"
-                *ngIf="WarrantyExpDate_Func?.errors?.['required'] && (WarrantyExpDate_Func?.touched || WarrantyExpDate_Func?.dirty)">Warranty
-                Ex. Date Required</span>
+                *ngIf="updateForm.get('WarrantyExpDate')?.errors?.['required'] && (updateForm.get('WarrantyExpDate')?.touched || updateForm.get('WarrantyExpDate')?.dirty)">
+                Warranty Ex. Date Required
+            </span>
 
-            <!---Service date----->
+            <!-- Service date -->
             <mat-form-field class="example-full-width" appearance="outline" id="servDate">
                 <mat-label id="servexDate">Service Exp. Date</mat-label>
-                <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3"
-                    (dateInput)="dateChange3(picker3)"
-                    [(ngModel)]="this.modifiedDate3">
+                <input matInput formControlName="ServiceExpDate" [matDatepicker]="picker3" (dateInput)="dateChange3(picker3)">
                 <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
                 <mat-datepicker #picker3></mat-datepicker>
             </mat-form-field>
             <span class="form-text text-danger"
-                *ngIf="ServiceExpDate_Func?.errors?.['required'] && (ServiceExpDate_Func?.touched || ServiceExpDate_Func?.dirty)">Serv.
-                Ex. Date Required</span>
+                *ngIf="updateForm.get('ServiceExpDate')?.errors?.['required'] && (updateForm.get('ServiceExpDate')?.touched || updateForm.get('ServiceExpDate')?.dirty)">
+                Serv. Ex. Date Required
+            </span>
 
-            <!-------Value Form---------> 
+            <!-------Value Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Value</mat-label>
                 <input id="input" matInput placeholder="Enter Value" formControlName="Value">
@@ -123,8 +115,8 @@
             <span class="form-text text-danger"
                 *ngIf="Value_Func?.errors?.['required'] && (Value_Func?.touched || Value_Func?.dirty)">Value
                 Required</span>
- 
-            <!-------Size Form---------> 
+
+            <!-------Size Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Size</mat-label>
                 <input id="input" matInput placeholder="Enter Size" formControlName="Size">
@@ -132,7 +124,7 @@
             <span class="form-text text-danger"
                 *ngIf="Size_Func?.errors?.['required'] && (Size_Func?.touched || Size_Func?.dirty)">Size Required</span>
 
-            <!-------Toner Form--------->     
+            <!-------Toner Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>Toner</mat-label>
                 <input id="input" matInput placeholder="Enter Toner" formControlName="Toner">
@@ -141,7 +133,7 @@
                 *ngIf="Toner_Func?.errors?.['required'] && (Toner_Func?.touched || Toner_Func?.dirty)">Toner
                 Required</span>
 
-            <!-------MAC Address Form--------->     
+            <!-------MAC Address Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>MacAddress</mat-label>
                 <input id="input" matInput placeholder="Enter MacAddress" formControlName="MacAddress">
@@ -150,7 +142,7 @@
                 *ngIf="MacAddress_Func?.errors?.['required'] && (MacAddress_Func?.touched || MacAddress_Func?.dirty)">MAC
                 Address Required</span>
 
-            <!-------IP Add Form--------->     
+            <!-------IP Add Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>IPAddress</mat-label>
                 <input id="input" matInput placeholder="Enter IPAddress" formControlName="IPAddress">
@@ -159,7 +151,7 @@
                 *ngIf="IPAddress_Func?.errors?.['required'] && (IPAddress_Func?.touched || IPAddress_Func?.dirty)">IP
                 Address Required</span>
 
-            <!-------Cell No Form--------->         
+            <!-------Cell No Form--------->
             <mat-form-field class="example-full-width" appearance="outline">
                 <mat-label>CellNumber</mat-label>
                 <input id="input" matInput placeholder="Enter CellNumber" formControlName="CellNumber">

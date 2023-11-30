@@ -9,6 +9,7 @@ import { BarGraphComponent } from './components/graphs/bar-graph/bar-graph.compo
 import { PieGraphComponent } from './components/graphs/pie-graph/pie-graph.component';
 import { ErrorCompComponent } from './components/error-comp/error-comp.component';
 import { ViewProductComponent } from './components/view-product/view-product.component';
+
 const routes: Routes = [
   { path: '', component: HeaderComponent, 
     children:[

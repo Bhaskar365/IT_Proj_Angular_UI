@@ -287,10 +287,10 @@ textarea {
 
 @media screen and (min-width:650px) {
 
-    p > input {
+    p>input {
         height: 21px;
         width: 72%;
-    }   
+    }
 
     mat-dialog-content div {
         margin-top: 8px;
@@ -300,6 +300,14 @@ textarea {
     mat-dialog-content div>p {
         margin-top: 4px;
         font-family: cursive;
+        font-size: 10px;
+    }
+
+    #notesCSS[_ngcontent-idm-c83] {
+        margin-left: 5px;
+        color: red;
+        position: relative;
+        top: -9px;
         font-size: 10px;
     }
 
@@ -325,14 +333,44 @@ textarea {
     }
 }
 
+@media screen and (min-width:700px) {
+
+    #notesCSS {
+        margin-left: 5px;
+        color: red;
+        position: relative;
+        top: -9px;
+        font-size: 10.5px;
+    }
+
+    textarea {
+        width: 99%;
+        height: 45px;
+        font-size: 8px;
+        padding: 4px 0px 0px 7px;
+    }
+}
+
 @media screen and (min-width:780px) {
 
     body {
         width: 411px;
     }
 
-    ;
+    #notesCSS {
+        margin-left: 5px;
+        color: red;
+        position: relative;
+        top: -9px;
+        font-size: 10.5px;
+    }
 
+    textarea {
+        width: 99%;
+        height: 44px;
+        font-size: 8px;
+        padding: 4px 0px 0px 7px;
+    }
 
     h2>p {
         color: white;
@@ -378,6 +416,21 @@ textarea {
     mat-dialog-content div {
         margin-top: 8px;
         font-size: 13px;
+    }
+
+    #notesCSS {
+        margin-left: 5px;
+        color: red;
+        position: relative;
+        top: -9px;
+        font-size: 11px;
+    }
+
+    textarea {
+        width: 99%;
+        height: 46px;
+        font-size: 10px;
+        padding: 4px 0px 0px 7px;
     }
 
     h2>p {
@@ -427,13 +480,27 @@ textarea {
         font-size: 17px;
     }
 
+    #notesCSS {
+        margin-left: 4px;
+        color: red;
+        position: relative;
+        top: -8px;
+        font-size: 12px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 47px;
+        font-size: 10px;
+        padding: 4px 0px 0px 7px;
+    }
+
     mat-dialog-content div {
         margin-top: 8px;
-        font-size: 14px;
     }
 
     mat-dialog-content div>p {
-        margin-top: 4px;
+        margin-top: 5px;
         font-family: cursive;
         font-size: 15px;
     }
@@ -489,6 +556,11 @@ textarea {
             height: 41px;
         }
 
+        p > input {
+            height: 27px;
+            width: 84%;
+        }
+
         body {
             width: 486px;
             max-height: fit-content !important;
@@ -505,20 +577,31 @@ textarea {
             font-size: 16px;
         }
 
-        mat-dialog-content div>p {
+        mat-dialog-content div > #headerText {
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        mat-dialog-content div > p {
             margin-top: 11px;
             font-family: cursive;
-            font-size: 20px;
+            font-size: 17px;
         }
 
         .form-text {
             font-size: 15px;
             display: block;
-            margin-left: 80px;
+            margin-left: 67px;
+            margin-top: 2px;
         }
 
         #notesCSS {
             margin-left: 0px;
+            font-size: 14px;
+        }
+
+        textarea {
+            font-size: 14px;
         }
 
         mat-dialog-actions {

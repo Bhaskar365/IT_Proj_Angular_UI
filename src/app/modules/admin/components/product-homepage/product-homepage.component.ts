@@ -123,8 +123,8 @@ viewOnlyDetails(id:any) {
 
     dialog.afterClosed().subscribe(res => {
     });
-
-
 }
+
+
 
 }

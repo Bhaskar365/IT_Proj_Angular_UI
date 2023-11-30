@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ApiServiceService } from 'src/app/services/api.service.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { HttpParams } from '@angular/common/http';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit{
   
   name!:string;
   x:any;
-  constructor(public api:ApiServiceService,private router:Router) {}
+  constructor(public api:ApiServiceService,private router:Router, private activatedRoute:ActivatedRoute) {}
 
   jwtHelperService = new JwtHelperService();
 
@@ -39,6 +39,10 @@ export class HeaderComponent implements OnInit{
 
   homeRouter(){
     this.router.navigate(["admin/product-homepage"]);
+  }
+
+  isHomeRoute(): boolean {
+    return this.router.url === 'admin/product-homepage' && this.activatedRoute.snapshot.firstChild?.routeConfig?.path === '';
   }
 
 }

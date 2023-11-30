@@ -32,13 +32,11 @@
   
   <mat-sidenav-container class="example-container">
     <mat-sidenav #drawer mode="side">
-      <!-- <mat-sidenav #drawer mode="over"> -->
-       <mat-list (click)="homeRouter()" 
-          routerLinkActive=".mat-list-item-focus" 
-          [routerLinkActiveOptions]="{exact:true}">Home</mat-list>
-       <mat-list routerLink="add-product">Add New</mat-list>
-       <mat-list routerLink="graphs/bar-graph">Bar Graph</mat-list>
-       <mat-list routerLink="graphs/pie-graph">Pie Graph</mat-list>
+      <!-- <mat-sidenav #drawer mode="over"> -->      
+       <mat-list routerLink="product-homepage" [routerLinkActive]="['active']" [class.active]="isHomeRoute()">Home</mat-list>
+       <mat-list routerLink="add-product" routerLinkActive="active">Add New</mat-list>
+       <mat-list routerLink="graphs/bar-graph" routerLinkActive="active">Bar Graph</mat-list>
+       <mat-list routerLink="graphs/pie-graph" routerLinkActive="active">Pie Graph</mat-list>
     </mat-sidenav>
     <mat-sidenav-content id="mainTable">
       <router-outlet></router-outlet>

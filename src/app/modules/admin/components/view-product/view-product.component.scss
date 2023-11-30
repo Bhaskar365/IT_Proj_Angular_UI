@@ -343,3 +343,9 @@ mat-card {
         }
     }
 }
+
+@media screen and (min-width:1300px) {
+    #excelImg {
+        border:2px solid red !important;
+    }
+}
