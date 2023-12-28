@@ -95,7 +95,8 @@ export class EditProductComponent implements OnInit {
       const date = new Date(dateString);
       return isNaN(date.getTime()) ? null : date.toISOString();
     }
-
+    
+    //test message
     //update submit
     updateFormSubmit() {
       // Clone the form value to avoid modifying the original form
