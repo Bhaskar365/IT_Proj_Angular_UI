@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { NgToastService } from 'ng-angular-popup';
-import { delay } from 'rxjs';
-import ValidateForm from 'src/app/helpers/validateform';
+
 import { ApiServiceService } from 'src/app/services/api.service.service';
 import Swal from 'sweetalert2';
 
@@ -23,8 +21,7 @@ export class LoginComponent implements OnInit {
   spinnerLoading: boolean = true;
   successMsg:boolean = true;
 
-  constructor(private fb: FormBuilder,
-    private loginAuth: ApiServiceService,
+  constructor(private loginAuth: ApiServiceService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -51,11 +48,11 @@ export class LoginComponent implements OnInit {
 
   loginSubmit() 
   {
+    this.spinnerLoading = false;
     this.loginAuth.loginUser([
       this.loginForm.value.email,
       this.loginForm.value.pwd
-    ]
-    ).subscribe(res => {
+    ]).subscribe(res => {
       this.failMsg = true;
       if (res == 'Failure') {
         this.responseMsg = 'Wrong Credentials. Refreshing Page';
@@ -108,5 +105,20 @@ export class LoginComponent implements OnInit {
       }
 
     });
+  }
+
+  getPasswordErrorMessage() {
+    return this.loginForm.controls?.['pwd'].hasError('required') ? 'Enter Password' : '';
+   }
+
+  getEmailErrorMessage() {
+    if (this.loginForm.controls?.['email'].hasError('required')) {
+      return 'Enter Email';
+   }
+   return this.loginForm.controls?.['email'].hasError('email') ? 'Not a valid email' : '';
+  }
+
+  moveToRegister() {
+    this.router.navigateByUrl('/sign-up');
   }
 }

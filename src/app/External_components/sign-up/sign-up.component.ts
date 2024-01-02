@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import ValidateForm from 'src/app/helpers/validateform';
-import { User } from 'src/app/models/models';
+
 import { ApiServiceService } from 'src/app/services/api.service.service';
 
 @Component({
@@ -17,12 +16,14 @@ export class SignUpComponent implements OnInit {
   isTextVisible: boolean = false;
   eyeIcon: string = "fa-eye-slash";
   displayMsg: string = '';
+  spinnerLoading: boolean = true;
+  responseMsg: any = '';
+  successMsg:boolean = true;
+  failMsg: boolean = true;
 
   isAccountCreated: boolean = false;
 
-  constructor(private fb: FormBuilder,
-    private authServ: ApiServiceService,
-    private router: Router) { }
+  constructor(private authServ: ApiServiceService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -67,6 +68,33 @@ export class SignUpComponent implements OnInit {
     return this.registerForm.get("pwd") as FormControl;
   }
 
+  getFirstNameErrorMessage() {
+    return this.registerForm.controls?.['firstname'].hasError('required') ? 'Enter First Name' : '';
+  }
+
+  getLastNameErrorMessage() {
+    return this.registerForm.controls?.['lastname'].hasError('required') ? 'Enter Last Name' : '';
+  }
+
+  getEmailErrorMessage() {
+    if (this.registerForm.controls?.['email'].hasError('required')) {
+      return 'Enter Email';
+    }
+    return this.registerForm.controls?.['email'].hasError('email') ? 'Not a valid email' : '';
+  }
+
+  getMobileErrorMessage() {
+    return this.registerForm.controls?.['mobile'].hasError('required') ? 'Enter Mobile' : '';
+  }
+
+  getGenderErrorMessage() {
+    return this.registerForm.controls?.['gender'].hasError('required') ? 'Enter Gender' : '';
+  }
+
+  getPasswordErrorMessage() {
+    return this.registerForm.controls?.['pwd'].hasError('required') ? 'Enter Password' : '';
+  }
+
   registerSubmit() {
     this.authServ.createAccount([
       this.registerForm.value.firstname,
@@ -89,6 +117,11 @@ export class SignUpComponent implements OnInit {
       }
     });
   }
+
+  redirectToLogin() {
+    this.router.navigate(["/login"]);
+  }
+
 }
 
 

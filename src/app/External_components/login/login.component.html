@@ -1,93 +1,52 @@
-<!-- <div class="outer" [hidden]="!isDataLoading"> -->
-<div class="outer" [hidden]="!spinnerLoading">
-    <div class="container">
-        <div class="row">
-            <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
-                <div class="panel border bg-white">
-                    <div class="panel-heading">
-                        <h3 class="pt-3 font-weight-bold">Login</h3>
-                    </div>
-                    <div class="alert alert-success mt-2 mb-1" role="alert" [hidden]="successMsg">
-                        {{this.responseMsg}}
-                    </div>
-        
-                    <div class="alert alert-danger mt-2 mb-1" role="alert" [hidden]="failMsg">
-                        {{this.responseMsg}}
-                    </div>
-                    <div class="panel-body p-3">
-
-                        <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
-                            
-                            <!-----------EMAIL INPUT--------------->
-                            <div class="form-group pt-3">
-                                <div class="input-field">
-                                    <span class="fa fa-user p-2"></span>
-                                    <input type="email" placeholder="Email" formControlName="email">
-                                </div>
-
-                                <!-------------EMAIL ERROR CHECK---------->
-                                <small 
-                                    class="form-text text-danger" 
-                                    *ngIf="Email.errors?.['required'] 
-                                    && (Email.touched || Email.dirty)">
-                                    *Email is required
-                                </small>
-
-                                <small *ngIf="Email.errors?.['email'] 
-                                    && (Email.touched || Email.dirty)"
-                                    class="form-text text-danger">
-                                    *Email is Invalid
-                                </small>
-                            </div>
-
-                            <!--------------PASSWORD INPUT----------------------->
-                            <div class="form-group pt-3">
-                                <div class="input-field">
-                                    <span class="fa fa-lock p-2"></span>
-                                    <input [type]="type" placeholder="Password" formControlName="pwd">
-                                    <span (click)="hideShowPass()" class="fa {{eyeIcon}}"></span>
-                                </div>
-                                <!--------------PASSWORD ERROR----------------------->
-                            <small *ngIf="PWD.errors?.['required'] && (PWD.touched || PWD.dirty)"
-                            class="form-text text-danger">*Password is required</small>
-
-                        <small class="form-text text-danger"
-                            *ngIf="PWD.errors?.['minlength'] && (PWD.touched || PWD.dirty)">
-                            Password has to be more than 6 characters
-                        </small>
-                            </div>
-
-                            <!---------FORGET PASSWORD---------->
-                            <div class="form-inline fr mt-4">
-                                <a id="forget" class="font-weight-bold">Forget Password?</a>
-                            </div>
-                            <!------------BUTTON------------->
-                            <button type="submit" [disabled]="loginForm.invalid"
-                                class="btn btn-primary btn-block mt-4 w-100">Login</button>
-                            <div class="text-center pt-4 text-muted">Don't have account? <a id="forget"
-                                    routerLink="/sign-up">Sign Up</a></div>
-                        </form>
-                    </div>
-
-                    <div class="mx-3 my-2 py-2 bordert">
-                        <div class="text-center py-3">
-                            <a href="https://www.facebook.com" target="_blank" class="px-2"><img
-                                    src="../../../assets/high-quality-facebook-logo.png"
-                                    alt="Facebook"></a>
-                            <a href="https://www.google.com" target="_blank" class="px-2"><img
-                                    src="../../../assets/google-logo-png.png"
-                                    alt="Google"></a>
-                            <a href="https://www.github.com" target="_blank" class="px-2"><img
-                                    src="../../../assets/github-logo.png"
-                                    alt="Github"></a>
-                        </div>
-                    </div>
-                </div>
+<span class="loader" [hidden]="spinnerLoading"></span>
+<div class="body" [hidden]="!spinnerLoading" id="body">
+    <mat-card>
+        <mat-card-content>
+            <mat-card-header>
+                <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+            <div class="alert alert-success mt-2 mb-1" role="alert" [hidden]="successMsg">
+                {{this.responseMsg}}
             </div>
-        </div>
-    </div>
+
+            <div class="alert alert-danger mt-2 mb-1" role="alert" [hidden]="failMsg">
+                {{this.responseMsg}}
+            </div>
+
+            <form [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+
+                <mat-form-field appearance="outline">
+                    <mat-label><mat-icon>email</mat-icon>&nbsp;Email</mat-label>
+                    <input matInput placeholder="Email" formControlName="email">
+                    <mat-error
+                        *ngIf="loginForm.controls?.['email']?.hasError('required') || loginForm.controls?.['email']?.hasError('email')"><strong>{{getEmailErrorMessage()}}</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label><mat-icon>lock</mat-icon>&nbsp;Password</mat-label>
+                    <input matInput placeholder="Password" formControlName="pwd">
+                    <mat-error
+                        *ngIf="loginForm.controls?.['pwd']?.hasError('required')"><strong>{{getPasswordErrorMessage()}}</strong></mat-error>
+
+                </mat-form-field>
+
+                <span id="btnBox">
+                    <button type="submit" mat-raised-button 
+                        [disabled]="loginForm.invalid" 
+                        color="primary">
+                            <strong>LOG IN</strong>
+                        </button>
+                    <button type="button" 
+                        mat-raised-button color="accent" 
+                        (click)="moveToRegister()">
+                        <strong>Don't have an Account ? Click to Register</strong>
+                        </button>
+                </span>
+
+            </form>
+        </mat-card-content>
+    </mat-card>
 </div>
 
-<span [hidden]="spinnerLoading">
-    <span class="loader"></span>
-</span>
+
+
