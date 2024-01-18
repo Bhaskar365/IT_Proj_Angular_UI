@@ -55,27 +55,9 @@ export class LoginComponent implements OnInit {
     ]).subscribe(res => {
       this.failMsg = true;
       if (res == 'Failure') {
-        this.responseMsg = 'Wrong Credentials. Refreshing Page';
+        this.responseMsg = 'Wrong Credentials. Try Again';
         this.failMsg = false;
         this.spinnerLoading = true;
-
-        const Toast = Swal.mixin({
-          toast: true,
-          position: 'top-end',
-          showConfirmButton: false,
-          timer: 1300,
-          timerProgressBar: true,
-        })
-
-        Toast.fire({
-          icon: 'error',
-          title: 'Credentials Incorrect'
-        })
-
-        setTimeout(() => {
-          this.spinnerLoading = false;
-          window.location.reload();
-        }, 2000)
       }
       else 
       {

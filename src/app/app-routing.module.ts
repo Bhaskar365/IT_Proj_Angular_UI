@@ -8,16 +8,14 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
 
   { path: 'login', component:LoginComponent },
-  
   { path: 'sign-up', component: SignUpComponent },
   { path: '', redirectTo:'/login', pathMatch:'full' },
   { path: 'admin', 
     canActivate:[AuthGuard],
       loadChildren:()=> 
-      import('./modules/admin/admin.module').then(m=>m.AdminModule) },
-  { path: '**', component: NotFoundComponent },
-  { path: 'not-found', component: NotFoundComponent }  
- 
+      import('./modules/admin/admin.module').then(m=>m.AdminModule) 
+    },
+  { path: '**', component: NotFoundComponent }, 
 ];
 
 @NgModule({

@@ -24,7 +24,7 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label><mat-icon>lock</mat-icon>&nbsp;Password</mat-label>
-                    <input matInput placeholder="Password" formControlName="pwd">
+                    <input type="password" matInput placeholder="Password" formControlName="pwd">
                     <mat-error
                         *ngIf="loginForm.controls?.['pwd']?.hasError('required')"><strong>{{getPasswordErrorMessage()}}</strong></mat-error>
 

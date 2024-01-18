@@ -163,7 +163,6 @@ export class ApiServiceService
   loadCurrentUser(){
       const token = localStorage.getItem('access_token');
       const userInfo = token != null ? this.jwtHelperService.decodeToken(token):null;
-
       let data = userInfo ? {
         id:userInfo.id,
         firstname : userInfo.firstname,
@@ -176,7 +175,10 @@ export class ApiServiceService
     }
 
   isLoggedIn():boolean{
-      return localStorage.getItem("access_token")? true : false;
+    console.log("jwt service: ",this.jwtHelperService)
+       return localStorage.getItem("access_token")? true : false;
+      //  const token = localStorage.getItem("access_token");
+      //  return token ? this.jwtHelperService.isTokenExpired(token) : false;
     }
 
   removeToken(){
@@ -188,8 +190,13 @@ export class ApiServiceService
         Email: loginInfo[0],
         Pwd: loginInfo[1]
       },
-      { responseType : 'text' }
-      );
-  }
+      { responseType: 'text' })
+    .pipe(
+      catchError(error => {
+        console.error('Login failed:', error);
+        throw error;
+      })
+    );
+}
     /////////////---WEB API LOGIN/REGISTER FUNCTION CALLS ENDS---///////////////
 }
