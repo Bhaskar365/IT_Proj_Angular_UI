@@ -12,10 +12,10 @@ const routes: Routes = [
   { path: '', redirectTo:'/login', pathMatch:'full' },
   { path: 'admin', 
     canActivate:[AuthGuard],
-      loadChildren:()=> 
-      import('./modules/admin/admin.module').then(m=>m.AdminModule) 
-    },
-  { path: '**', component: NotFoundComponent }, 
+    loadChildren:()=> 
+    import('./modules/admin/admin.module').then(m=>m.AdminModule) 
+},
+{ path: '**', component: NotFoundComponent }, 
 ];
 
 @NgModule({

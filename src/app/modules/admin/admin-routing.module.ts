@@ -20,10 +20,10 @@ const routes: Routes = [
       { path: 'add-product', component: AddProductComponent },
       { path: 'edit-product/:userId', component: EditProductComponent },
       { path: 'view-product', component:ViewProductComponent },
-      { path: 'error', component: ErrorCompComponent},
-      { path: '' , redirectTo:'product-homepage', pathMatch:'full' }
+      { path: '' , redirectTo:'product-homepage', pathMatch:'full' },
     ],
   },
+  { path: 'error', component: ErrorCompComponent},
 ];
 
 @NgModule({

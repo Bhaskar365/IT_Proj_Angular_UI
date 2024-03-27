@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable, map } from 'rxjs';
 import { ApiServiceService } from '../services/api.service.service';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { ApiServiceService } from '../services/api.service.service';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private api:ApiServiceService){}
+  constructor(private api:ApiServiceService, private router:Router){}
 
   canActivate( route: ActivatedRouteSnapshot,
                state: RouterStateSnapshot): 
@@ -17,6 +17,11 @@ export class AuthGuard implements CanActivate {
                 boolean | 
                 UrlTree 
   {
-             return this.api.isLoggedIn();
+             var x =  this.api.isLoggedIn();
+             if(x) {
+              return true;
+             }
+             return this.router.parseUrl('/login');
   }
 }
+

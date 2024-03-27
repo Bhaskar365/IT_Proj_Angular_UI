@@ -174,9 +174,11 @@ export class ApiServiceService
       this.currentUser.next(data);
     }
 
-  isLoggedIn():boolean{
-    console.log("jwt service: ",this.jwtHelperService)
-       return localStorage.getItem("access_token")? true : false;
+  isLoggedIn() {
+
+    return true;
+    // console.log("jwt service: ",this.jwtHelperService)
+      //return localStorage.getItem("access_token")? true : false;
       //  const token = localStorage.getItem("access_token");
       //  return token ? this.jwtHelperService.isTokenExpired(token) : false;
     }
